@@ -5,11 +5,12 @@ const Header = () => {
     <header className="bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">C</span>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-lg">⚡</span>
             </div>
             <span className="text-2xl font-bold text-primary">CONTRATEI</span>
+            <span className="text-sm text-muted-foreground font-medium">Serviços Elétricos</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-8">

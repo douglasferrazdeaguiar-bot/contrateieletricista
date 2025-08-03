@@ -17,40 +17,40 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 185 84% 25%;
+    --primary: 184 81% 29%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 185 20% 95%;
-    --secondary-foreground: 185 84% 25%;
+    --secondary: 184 30% 95%;
+    --secondary-foreground: 184 81% 29%;
 
-    --muted: 185 20% 95%;
-    --muted-foreground: 185 15% 45%;
+    --muted: 184 30% 95%;
+    --muted-foreground: 184 20% 45%;
 
-    --accent: 43 96% 56%;
-    --accent-foreground: 185 84% 25%;
+    --accent: 45 97% 54%;
+    --accent-foreground: 184 81% 29%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 185 30% 88%;
-    --input: 185 30% 88%;
-    --ring: 185 84% 25%;
+    --border: 184 30% 88%;
+    --input: 184 30% 88%;
+    --ring: 184 81% 29%;
 
     --radius: 0.75rem;
     
-    /* Professional service design tokens */
-    --primary-teal: 185 84% 25%;
-    --primary-teal-light: 185 60% 35%;
-    --accent-orange: 43 96% 56%;
-    --accent-orange-light: 43 85% 65%;
+    /* CONTRATEI brand colors */
+    --primary-teal: 184 81% 29%;
+    --primary-teal-light: 184 60% 40%;
+    --accent-orange: 45 97% 54%;
+    --accent-orange-light: 45 85% 65%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(185 84% 25%), hsl(185 70% 30%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(185 20% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(184 81% 29%), hsl(184 70% 35%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(184 20% 98%));
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(185 84% 25% / 0.1);
-    --shadow-card: 0 8px 30px hsl(185 84% 25% / 0.15);
+    --shadow-soft: 0 4px 20px hsl(184 81% 29% / 0.1);
+    --shadow-card: 0 8px 30px hsl(184 81% 29% / 0.15);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

@@ -6,20 +6,20 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Telefone",
-      content: "(11) 99999-9999",
+      content: "(61) 99633-9282",
       subtitle: "Atendemos 24h"
     },
     {
       icon: Mail,
-      title: "E-mail",
-      content: "contato@contratei.com.br",
-      subtitle: "Resposta em até 2h"
+      title: "WhatsApp",
+      content: "(61) 99633-9282",
+      subtitle: "Resposta rápida"
     },
     {
       icon: MapPin,
       title: "Endereço",
-      content: "São Paulo, SP",
-      subtitle: "Atendemos toda região"
+      content: "Brasília, DF",
+      subtitle: "CEP 71590-538"
     },
     {
       icon: Clock,

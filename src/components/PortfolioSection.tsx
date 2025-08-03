@@ -5,40 +5,46 @@ const PortfolioSection = () => {
 
   const portfolioItems = [
     {
-      title: "Instalação de Padrão Trifásico",
-      location: "Taguatinga - DF",
-      description: "Instalação completa de padrão de entrada trifásico para residência",
-      category: "Padrão de Entrada"
+      title: "Carregador para Veículo Elétrico GWM",
+      location: "Brasília - DF",
+      description: "Instalação de carregador veicular com circuito dedicado e proteção",
+      category: "Automação",
+      image: "photo-1518770660439-4636190af475"
+    },
+    {
+      title: "Instalação Elétrica Comercial",
+      location: "Asa Norte - Brasília",
+      description: "Projeto elétrico completo com iluminação LED e acabamentos modernos",
+      category: "Comercial",
+      image: "photo-1581090464777-f3220bbe1b8b"
     },
     {
       title: "Quadro de Distribuição Residencial",
-      location: "Asa Norte - Brasília",
-      description: "Modernização de quadro elétrico com organização de circuitos",
-      category: "Quadro Elétrico"
+      location: "Taguatinga - DF",
+      description: "Modernização de quadro elétrico com disjuntores e organização de circuitos",
+      category: "Quadro Elétrico",
+      image: "photo-1518770660439-4636190af475"
     },
     {
-      title: "Instalação de Carregador Veicular",
+      title: "Padrão de Entrada Trifásico",
       location: "Águas Claras - DF",
-      description: "Instalação de carregador para veículo elétrico com circuito dedicado",
-      category: "Automação"
+      description: "Instalação completa de padrão de entrada com medidor e proteções",
+      category: "Padrão de Entrada",
+      image: "photo-1581090464777-f3220bbe1b8b"
     },
     {
-      title: "Correção de Fuga Elétrica",
-      location: "Ceilândia - DF",
-      description: "Identificação e correção de vazamento elétrico que aumentava a conta",
-      category: "Manutenção"
+      title: "Carregador Veicular Residencial",
+      location: "Lago Sul - Brasília",
+      description: "Sistema de carregamento para carro elétrico em área externa",
+      category: "Automação",
+      image: "photo-1518770660439-4636190af475"
     },
     {
-      title: "Quadro Comercial Trifásico",
-      location: "Asa Sul - Brasília",
-      description: "Instalação de quadro elétrico para estabelecimento comercial",
-      category: "Comercial"
-    },
-    {
-      title: "Instalação Elétrica Completa",
-      location: "Samambaia - DF",
-      description: "Fiação completa e instalação de tomadas e interruptores",
-      category: "Residencial"
+      title: "Manutenção Elétrica Preventiva",
+      location: "Sobradinho - DF",
+      description: "Revisão completa da instalação elétrica e troca de componentes",
+      category: "Manutenção",
+      image: "photo-1581090464777-f3220bbe1b8b"
     }
   ];
 
