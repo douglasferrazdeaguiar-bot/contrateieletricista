@@ -34,11 +34,11 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Pronto para Começar?
+            Precisa de Serviços Elétricos?
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Entre em contato conosco e transforme sua casa com a qualidade 
-            e confiança que você merece.
+            Entre em contato conosco e garanta a segurança elétrica da sua casa 
+            ou empresa com profissionais certificados.
           </p>
         </div>
 
@@ -62,16 +62,16 @@ const ContactSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">
-                Solicite seu Orçamento Gratuito
+                Orçamento Elétrico Gratuito
               </h3>
               <p className="text-white/90 mb-6">
-                Preencha o formulário ao lado ou entre em contato diretamente. 
-                Nossa equipe retornará em até 2 horas!
+                Preencha o formulário ao lado ou chame no WhatsApp. 
+                Nossa equipe retornará em até 2 horas com seu orçamento!
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-white/90">Atendimento personalizado</span>
+                  <span className="text-white/90">Diagnóstico elétrico gratuito</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -79,7 +79,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-white/90">Visita técnica gratuita</span>
+                  <span className="text-white/90">Equipe certificada e uniformizada</span>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@ const ContactSection = () => {
                 <div>
                   <textarea 
                     rows={4} 
-                    placeholder="Descreva o serviço que precisa"
+                    placeholder="Descreva o serviço elétrico que precisa"
                     className="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent resize-none"
                   ></textarea>
                 </div>
@@ -119,7 +119,7 @@ const ContactSection = () => {
                   size="lg" 
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
                 >
-                  Solicitar Orçamento Gratuito
+                  Solicitar Orçamento Elétrico
                 </Button>
               </form>
             </div>

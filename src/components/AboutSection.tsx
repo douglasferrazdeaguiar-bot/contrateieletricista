@@ -9,10 +9,11 @@ const AboutSection = () => {
   ];
 
   const values = [
-    "Excelência em tudo que fazemos",
-    "Inovação constante e criatividade", 
-    "Transparência e confiança",
-    "Foco no cliente e resultados"
+    "Orçamento gratuito",
+    "Atendimento rápido", 
+    "Garantia de serviço",
+    "Equipe certificada",
+    "Atendimento em toda Brasília e entorno"
   ];
 
   return (
@@ -24,9 +25,13 @@ const AboutSection = () => {
               <h2 className="text-4xl font-bold text-foreground mb-6">
                 Sobre a Contratei
               </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Mais de 10 anos de experiência em serviços elétricos e manutenção na 
+                construção civil. Atuamos com profissionalismo, segurança e pontualidade.
+              </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Com mais de 10 anos de experiência, somos especialistas em reparos 
-                e pequenas reformas, oferecendo qualidade e confiança para seu lar.
+                Garantimos qualidade em cada etapa do serviço, com equipe uniformizada, 
+                equipamentos adequados e atendimento humanizado.
               </p>
             </div>
 
@@ -36,20 +41,20 @@ const AboutSection = () => {
                 <h3 className="text-xl font-semibold text-foreground">Nossa Missão</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Transformar cada lar em um ambiente mais seguro, funcional e bonito 
-                através de serviços de qualidade e atendimento personalizado.
+                Transformar cada lar e empresa em um ambiente mais seguro e funcional 
+                através de instalações elétricas de qualidade e atendimento especializado.
               </p>
               <p className="text-muted-foreground leading-relaxed mt-4">
-                Acreditamos que sua casa merece o melhor cuidado, e nosso papel é 
-                oferecer soluções práticas e duradouras para todos os tipos de 
-                reparos e pequenas reformas.
+                Sua segurança elétrica é nossa prioridade. Oferecemos soluções técnicas 
+                confiáveis e duradouras para todos os tipos de instalações elétricas 
+                residenciais e comerciais.
               </p>
             </div>
 
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <Award className="w-6 h-6 text-primary" />
-                <h3 className="text-xl font-semibold text-foreground">Nossos Valores</h3>
+                <h3 className="text-xl font-semibold text-foreground">Nossos Diferenciais</h3>
               </div>
               <div className="space-y-3">
                 {values.map((value, index) => (

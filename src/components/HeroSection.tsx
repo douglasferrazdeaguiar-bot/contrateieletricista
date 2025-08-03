@@ -19,40 +19,41 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Seu Lar Merece o{" "}
-              <span className="text-accent">Melhor Cuidado</span>
+              <span className="text-accent">Especialistas</span> em Serviços{" "}
+              <span className="text-accent">Elétricos</span><br />
+              Residenciais e Comerciais
             </h1>
             
             <p className="text-xl text-white/90 leading-relaxed">
-              Especialistas em reparos e pequenas reformas. Transformamos sua casa 
-              com qualidade, agilidade e preço justo.
+              Sua segurança elétrica começa aqui. Soluções completas para sua instalação 
+              elétrica com segurança, agilidade e garantia. Atendemos Brasília e região.
             </p>
             
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-accent" />
-                <span className="text-white/90">Orçamento Gratuito</span>
+                <span className="text-white/90">Orçamento elétrico gratuito</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-accent" />
-                <span className="text-white/90">Trabalho Garantido</span>
+                <span className="text-white/90">Equipe certificada e uniformizada</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-accent" />
-                <span className="text-white/90">Profissionais Qualificados</span>
+                <span className="text-white/90">Atendimento em Brasília e entorno</span>
               </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8">
-                Começar Agora
+                Solicitar Orçamento Elétrico
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="border-white/30 text-white hover:bg-white/10"
               >
-                Ver Portfólio
+                Fale pelo WhatsApp
               </Button>
             </div>
           </div>
