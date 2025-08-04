@@ -17,59 +17,55 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 184 81% 29%;
+    --primary: 199 89% 48%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 184 30% 95%;
-    --secondary-foreground: 184 81% 29%;
+    --secondary: 199 20% 95%;
+    --secondary-foreground: 199 89% 20%;
 
-    --muted: 184 30% 95%;
-    --muted-foreground: 184 20% 45%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 45 97% 54%;
-    --accent-foreground: 184 81% 29%;
+    --accent: 48 100% 67%;
+    --accent-foreground: 199 89% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 184 30% 88%;
-    --input: 184 30% 88%;
-    --ring: 184 81% 29%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 199 89% 48%;
 
     --radius: 0.75rem;
     
     /* CONTRATEI brand colors */
-    --primary-teal: 184 81% 29%;
-    --primary-teal-light: 184 60% 40%;
-    --accent-orange: 45 97% 54%;
-    --accent-orange-light: 45 85% 65%;
+    --brand-blue: 199 89% 48%;
+    --brand-blue-light: 199 70% 60%;
+    --brand-yellow: 48 100% 67%;
+    --brand-yellow-light: 48 90% 75%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(184 81% 29%), hsl(184 70% 35%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(184 20% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(199 89% 48%), hsl(199 70% 60%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14.3% 95.9%));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(199 20% 98%));
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(184 81% 29% / 0.1);
-    --shadow-card: 0 8px 30px hsl(184 81% 29% / 0.15);
+    --shadow-soft: 0 4px 20px hsl(199 89% 48% / 0.08);
+    --shadow-card: 0 8px 30px hsl(199 89% 48% / 0.12);
+    --shadow-button: 0 4px 14px hsl(199 89% 48% / 0.25);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
   }
 
   .dark {

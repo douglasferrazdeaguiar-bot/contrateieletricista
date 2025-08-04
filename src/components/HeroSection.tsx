@@ -3,51 +3,58 @@ import { CheckCircle } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-section overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full"></div>
-      <div className="absolute top-1/2 right-20 w-32 h-32 bg-primary-foreground/10 rounded-full"></div>
+      <div className="absolute top-1/2 right-20 w-32 h-32 bg-primary/10 rounded-full"></div>
       <div className="absolute bottom-20 right-1/4 w-16 h-16 bg-accent/30 rounded-full"></div>
       
       <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          <div className="text-white space-y-8">
-            <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-8">
-              <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <span className="text-primary font-bold">C</span>
-              </div>
+          <div className="text-foreground space-y-8">
+            <div className="flex items-center gap-4 mb-8">
+              <img 
+                src="/lovable-uploads/e1c5eca4-5034-4067-9b87-87e0dbd55b25.png" 
+                alt="Contratei Logo" 
+                className="h-16 w-auto"
+              />
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-accent">Especialistas</span> em Serviços{" "}
+              <span className="text-primary">Especialistas</span> em Serviços{" "}
               <span className="text-accent">Elétricos</span><br />
               Residenciais e Comerciais
             </h1>
             
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed">
               Sua segurança elétrica começa aqui. Soluções completas para sua instalação 
-              elétrica com segurança, agilidade e garantia. Atendemos Brasília e região.
+              elétrica com segurança, agilidade e garantia. Atendemos Brasília e região com 
+              mais de 10 anos de experiência.
             </p>
             
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-accent" />
-                <span className="text-white/90">Orçamento elétrico gratuito</span>
+                <span className="text-muted-foreground">Orçamento elétrico gratuito</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-accent" />
-                <span className="text-white/90">Equipe certificada e uniformizada</span>
+                <span className="text-muted-foreground">Equipe certificada e uniformizada</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-accent" />
-                <span className="text-white/90">Atendimento em Brasília e entorno</span>
+                <span className="text-muted-foreground">Atendimento em Brasília e entorno</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="w-5 h-5 text-accent" />
+                <span className="text-muted-foreground">Mais de 10 anos de experiência</span>
               </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 shadow-button"
                 onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank')}
               >
                 Solicitar Orçamento Elétrico
@@ -55,7 +62,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
               >
                 Fale pelo WhatsApp
@@ -66,15 +73,15 @@ const HeroSection = () => {
           <div className="relative">
             <div className="relative w-full max-w-md mx-auto">
               {/* Statistics circle */}
-              <div className="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
+              <div className="w-80 h-80 bg-card rounded-full flex items-center justify-center shadow-card border border-border">
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-white mb-2">500+</div>
-                  <div className="text-white/90 text-lg">Projetos Entregues</div>
+                  <div className="text-6xl font-bold text-primary mb-2">500+</div>
+                  <div className="text-muted-foreground text-lg">Projetos Entregues</div>
                 </div>
               </div>
               
               {/* Small accent circle */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent rounded-full flex items-center justify-center">
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-soft">
                 <span className="text-accent-foreground font-bold text-lg">99%</span>
               </div>
             </div>

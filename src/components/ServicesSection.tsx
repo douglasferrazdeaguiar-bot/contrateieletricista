@@ -1,187 +1,140 @@
-import { Zap, Wrench, Paintbrush, Hammer, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Zap, Shield, Wrench, Home, Droplets, Paintbrush, Hammer } from "lucide-react";
 
 const ServicesSection = () => {
   const electricalServices = [
     {
       icon: Zap,
-      title: "Instalação e Manutenção Elétrica",
-      description: "Instalações elétricas completas e manutenção preventiva com segurança garantida.",
-      features: [
-        "Instalação de tomadas e interruptores",
-        "Fiação elétrica completa", 
-        "Manutenção preventiva",
-        "Identificação de problemas elétricos"
-      ]
+      title: "Instalação Elétrica",
+      description: "Instalações completas residenciais e comerciais",
+      features: ["Projeto elétrico", "Fiação nova", "Pontos de luz", "Tomadas"]
+    },
+    {
+      icon: Shield,
+      title: "Quadro de Distribuição",
+      description: "Montagem e manutenção de quadros elétricos",
+      features: ["Disjuntores", "DR e DPS", "Organização", "Identificação"]
     },
     {
       icon: Wrench,
-      title: "Quadro de Distribuição",
-      description: "Instalação, modernização e manutenção de quadros elétricos residenciais e comerciais.",
-      features: [
-        "Quadros de distribuição",
-        "Troca de disjuntores",
-        "Organização de circuitos", 
-        "Adequação às normas"
-      ]
+      title: "Manutenção Elétrica",
+      description: "Correção de problemas e melhorias",
+      features: ["Diagnóstico", "Fuga de energia", "Curto-circuito", "Emergências"]
     },
     {
-      icon: Zap,
-      title: "Correção de Fuga de Energia",
-      description: "Identificação e correção de vazamentos elétricos que aumentam sua conta de luz.",
-      features: [
-        "Diagnóstico completo",
-        "Localização de fugas",
-        "Correção de problemas",
-        "Teste de eficiência"
-      ]
-    },
-    {
-      icon: Hammer,
+      icon: Home,
       title: "Padrão de Entrada",
-      description: "Instalação e adequação de padrão de entrada conforme normas da CEB.",
-      features: [
-        "Padrão residencial",
-        "Padrão comercial",
-        "Adequação CEB",
-        "Aumento de carga"
-      ]
+      description: "Instalação de padrões residenciais e comerciais",
+      features: ["Monofásico", "Bifásico", "Trifásico", "Regularização"]
     }
   ];
 
-  const complementaryServices = [
+  const otherServices = [
+    {
+      icon: Droplets,
+      title: "Hidráulica",
+      description: "Reparos e instalações hidráulicas completas"
+    },
     {
       icon: Paintbrush,
-      title: "Pintura e Acabamentos",
-      description: "Pintura interna e externa com materiais de qualidade.",
-      features: [
-        "Pintura residencial",
-        "Textura e grafiato",
-        "Acabamentos especiais",
-        "Pintura comercial"
-      ]
+      title: "Pintura",
+      description: "Pintura residencial e comercial com qualidade"
     },
     {
       icon: Hammer,
-      title: "Pequenos Reparos",
-      description: "Reparos diversos para manter sua casa sempre em ordem.",
-      features: [
-        "Instalação de prateleiras",
-        "Reparos em portas",
-        "Montagem de móveis",
-        "Manutenção geral"
-      ]
+      title: "Reparos Diversos",
+      description: "Manutenção geral e pequenos reparos"
     }
   ];
 
   return (
-    <section id="servicos" className="py-20 bg-secondary/30">
+    <section id="servicos" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            Serviços Elétricos Especializados
+            Nossos Serviços Especializados
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Evite riscos com instalações mal feitas. Conte com profissionais capacitados 
-            para soluções completas em elétrica com segurança e agilidade.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Oferecemos soluções completas para sua casa ou empresa com foco em qualidade e segurança
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
-          {electricalServices.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-gradient-card p-8 rounded-2xl shadow-soft hover:shadow-card transition-all duration-300 group"
-            >
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-
-              <div className="space-y-2 mb-6">
-                {service.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
-              >
-                Saiba Mais
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-          ))}
-        </div>
-
-        {/* Serviços Complementares */}
-        <div className="text-center mb-12 mt-20">
-          <h3 className="text-3xl font-bold text-foreground mb-4">
-            Serviços Complementares
+        {/* Serviços Elétricos Principais */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-primary text-center mb-8">
+            ⚡ Serviços Elétricos - Nossa Especialidade
           </h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Além dos serviços elétricos, oferecemos soluções completas para sua casa.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {complementaryServices.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-gradient-card p-8 rounded-2xl shadow-soft hover:shadow-card transition-all duration-300 group"
-            >
-              <div className="mb-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {electricalServices.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-card p-6 rounded-xl shadow-card border border-border hover:shadow-lg transition-all duration-300 group"
+              >
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <service.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                <h4 className="text-foreground font-semibold mb-3 text-lg">{service.title}</h4>
+                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <div className="space-y-2 mb-6">
-                {service.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
-                    <span className="text-sm text-muted-foreground">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
-              >
-                Saiba Mais
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-6">
-            Precisa de um serviço elétrico específico? Fale conosco!
+        {/* Outros Serviços */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-primary text-center mb-8">
+            🔧 Serviços Complementares
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {otherServices.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-card p-6 rounded-xl shadow-card border border-border hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                  <service.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h4 className="text-foreground font-semibold mb-2">{service.title}</h4>
+                <p className="text-muted-foreground text-sm">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center bg-gradient-section rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-primary mb-4">
+            Precisa de um Orçamento?
+          </h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Entre em contato conosco e receba um orçamento gratuito para seu projeto elétrico. 
+            Atendemos com agilidade e profissionalismo.
           </p>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            Solicitar Orçamento Elétrico
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-button"
+              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento.', '_blank')}
+            >
+              Solicitar Orçamento Gratuito
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
+            >
+              Falar no WhatsApp
+            </Button>
+          </div>
         </div>
       </div>
     </section>
