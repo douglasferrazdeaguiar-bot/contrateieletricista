@@ -45,13 +45,18 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8"
+                onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank')}
+              >
                 Solicitar Orçamento Elétrico
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="border-white/30 text-white hover:bg-white/10"
+                onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
               >
                 Fale pelo WhatsApp
               </Button>

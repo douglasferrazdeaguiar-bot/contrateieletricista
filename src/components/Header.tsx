@@ -6,11 +6,11 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">⚡</span>
-            </div>
-            <span className="text-2xl font-bold text-primary">CONTRATEI</span>
-            <span className="text-sm text-muted-foreground font-medium">Serviços Elétricos</span>
+            <img 
+              src="/lovable-uploads/e1c5eca4-5034-4067-9b87-87e0dbd55b25.png" 
+              alt="Contratei Logo" 
+              className="h-12 w-auto"
+            />
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
@@ -32,10 +32,17 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="hidden md:inline-flex">
+            <Button 
+              variant="ghost" 
+              className="hidden md:inline-flex"
+              onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
+            >
               Fale Conosco
             </Button>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button 
+              className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank')}
+            >
               Orçamento
             </Button>
           </div>

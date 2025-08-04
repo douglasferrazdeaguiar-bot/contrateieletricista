@@ -115,9 +115,10 @@ const ContactSection = () => {
                   ></textarea>
                 </div>
                 <Button 
-                  type="submit"
+                  type="button"
                   size="lg" 
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
+                  onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank')}
                 >
                   Solicitar Orçamento Elétrico
                 </Button>
