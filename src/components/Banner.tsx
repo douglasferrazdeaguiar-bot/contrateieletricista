@@ -11,13 +11,7 @@ const Banner = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Sua <span className="relative bg-black/40 px-6 py-3 rounded-lg text-accent backdrop-blur-sm border border-accent/20">
-              <div 
-                className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-20 rounded-lg"
-                style={{ backgroundImage: "url('/lovable-uploads/714388a3-1ba3-43c5-a9af-fec8562ae1c7.png')" }}
-              ></div>
-              <span className="relative z-10">Solução Elétrica</span>
-            </span> Completa em Brasília
+            Sua <span className="bg-black/40 px-6 py-3 rounded-lg text-accent backdrop-blur-sm border border-accent/20">Solução Elétrica</span> Completa em Brasília
           </h2>
           
           <p className="text-xl text-white/90 leading-relaxed">
