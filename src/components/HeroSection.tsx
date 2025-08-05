@@ -4,6 +4,12 @@ import { CheckCircle } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-gradient-section overflow-hidden">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: "url('/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png')" }}
+      ></div>
+      
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full"></div>
       <div className="absolute top-1/2 right-20 w-32 h-32 bg-primary/10 rounded-full"></div>
@@ -14,9 +20,9 @@ const HeroSection = () => {
           <div className="text-foreground space-y-8">
             <div className="flex items-center gap-4 mb-8">
               <img 
-                src="/lovable-uploads/e1c5eca4-5034-4067-9b87-87e0dbd55b25.png" 
+                src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
                 alt="Contratei Logo" 
-                className="h-16 w-auto"
+                className="h-20 w-auto brightness-110 contrast-110 drop-shadow-lg"
               />
             </div>
             

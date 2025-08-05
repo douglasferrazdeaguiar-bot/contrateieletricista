@@ -91,10 +91,16 @@ const AboutSection = () => {
                 Junte-se a centenas de empresas que já confiam em nossas soluções
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold transition-colors">
+                <button 
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
+                  onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de falar sobre serviços elétricos.', '_blank')}
+                >
                   Fale Conosco
                 </button>
-                <button className="border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-6 py-3 rounded-lg font-semibold transition-colors">
+                <button 
+                  className="border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-6 py-3 rounded-lg font-semibold transition-colors"
+                  onClick={() => window.open('https://www.instagram.com/contratei_profissionais/', '_blank')}
+                >
                   Ver Portfolio
                 </button>
               </div>
