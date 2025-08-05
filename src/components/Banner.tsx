@@ -11,7 +11,7 @@ const Banner = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Sua <span className="text-accent">Solução Elétrica</span> Completa em Brasília
+            Sua <span className="bg-black/30 px-4 py-2 rounded-lg text-accent backdrop-blur-sm">Solução Elétrica</span> Completa em Brasília
           </h2>
           
           <p className="text-xl text-white/90 leading-relaxed">
@@ -21,10 +21,10 @@ const Banner = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-button group"
+              className="bg-white text-primary hover:bg-white/90 font-bold px-12 py-4 text-lg shadow-button group animate-pulse hover:animate-none transform hover:scale-105 transition-all duration-300"
               onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Preciso de um eletricista urgente!', '_blank')}
             >
-              <Phone className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+              <Phone className="w-6 h-6 mr-3 group-hover:animate-bounce" />
               Chamar Eletricista Agora
             </Button>
             
