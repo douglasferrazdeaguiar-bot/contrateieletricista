@@ -81,7 +81,7 @@ const HeroSection = () => {
               {/* Statistics circle */}
               <div className="w-80 h-80 bg-card rounded-full flex items-center justify-center shadow-card border border-border">
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-primary mb-2">500+</div>
+                  <div className="text-6xl font-bold text-primary mb-2">200+</div>
                   <div className="text-muted-foreground text-lg">Projetos Entregues</div>
                 </div>
               </div>

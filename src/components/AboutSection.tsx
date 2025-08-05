@@ -2,9 +2,9 @@ import { CheckCircle, Target, Users, Award, TrendingUp } from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { number: "500+", label: "Clientes Atendidos" },
-    { number: "1000+", label: "Projetos Concluídos" },
-    { number: "15+", label: "Anos de Experiência" },
+    { number: "200+", label: "Clientes Atendidos" },
+    { number: "200+", label: "Projetos Concluídos" },
+    { number: "10+", label: "Anos de Experiência" },
     { number: "98%", label: "Taxa de Satisfação" },
   ];
 
