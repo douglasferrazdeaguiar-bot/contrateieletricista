@@ -73,7 +73,7 @@ const ServicesSection = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <service.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h4 className="text-foreground font-semibold mb-3 text-lg">{service.title}</h4>
+                <h4 className="text-primary font-bold mb-3 text-lg">{service.title}</h4>
                 <p className="text-muted-foreground mb-4">{service.description}</p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   {service.features.map((feature, idx) => (
@@ -102,7 +102,7 @@ const ServicesSection = () => {
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <service.icon className="w-6 h-6 text-accent" />
                 </div>
-                <h4 className="text-foreground font-semibold mb-2">{service.title}</h4>
+                <h4 className="text-primary font-bold mb-2 text-lg">{service.title}</h4>
                 <p className="text-muted-foreground text-sm">{service.description}</p>
               </div>
             ))}
