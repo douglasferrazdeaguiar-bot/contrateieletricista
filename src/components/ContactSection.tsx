@@ -84,15 +84,22 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="bg-muted/30 backdrop-blur-sm rounded-xl p-6 border border-border">
-              <form className="space-y-4">
-                <div>
-                  <input 
-                    type="text" 
-                    placeholder="Seu nome"
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
+             <div className="bg-muted/30 backdrop-blur-sm rounded-xl p-6 border border-border">
+               <div className="flex items-center justify-center mb-6">
+                 <img 
+                   src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
+                   alt="Contratei Logo" 
+                   className="h-16 w-auto opacity-80"
+                 />
+               </div>
+               <form className="space-y-4">
+                 <div>
+                   <input 
+                     type="text" 
+                     placeholder="Seu nome"
+                     className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                   />
+                 </div>
                 <div>
                   <input 
                     type="tel" 
