@@ -61,7 +61,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 shadow-button"
-                onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank')}
+                onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank', 'noopener,noreferrer')}
               >
                 Solicitar Orçamento Elétrico
               </Button>
@@ -69,7 +69,7 @@ const HeroSection = () => {
                 size="lg" 
                 variant="outline" 
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
+                onClick={() => window.open('https://wa.me/5561996339282', '_blank', 'noopener,noreferrer')}
               >
                 Fale pelo WhatsApp
               </Button>

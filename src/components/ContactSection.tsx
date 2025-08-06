@@ -1,7 +1,59 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
+
+const formSchema = z.object({
+  name: z.string()
+    .min(2, "Nome deve ter pelo menos 2 caracteres")
+    .max(50, "Nome deve ter no máximo 50 caracteres")
+    .regex(/^[a-zA-ZÀ-ÿ\s]+$/, "Nome deve conter apenas letras"),
+  phone: z.string()
+    .min(10, "Telefone deve ter pelo menos 10 dígitos")
+    .max(15, "Telefone deve ter no máximo 15 dígitos")
+    .regex(/^[\d\s\(\)\-\+]+$/, "Formato de telefone inválido"),
+  email: z.string()
+    .email("Email inválido")
+    .max(100, "Email deve ter no máximo 100 caracteres"),
+  description: z.string()
+    .min(10, "Descrição deve ter pelo menos 10 caracteres")
+    .max(500, "Descrição deve ter no máximo 500 caracteres")
+});
 
 const ContactSection = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      description: "",
+    },
+  });
+
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    const message = `Olá! Gostaria de solicitar um orçamento para serviços elétricos.
+
+Nome: ${values.name}
+Telefone: ${values.phone}
+Email: ${values.email}
+Descrição: ${values.description}`;
+    
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/5561996339282?text=${encodedMessage}`;
+    
+    window.open(url, '_blank', 'noopener,noreferrer');
+    toast({
+      title: "Formulário enviado!",
+      description: "Redirecionando para o WhatsApp...",
+    });
+  };
+
   const contactInfo = [
     {
       icon: Phone,
@@ -92,44 +144,84 @@ const ContactSection = () => {
                    className="h-16 w-auto opacity-80"
                  />
                </div>
-               <form className="space-y-4">
-                 <div>
-                   <input 
-                     type="text" 
-                     placeholder="Seu nome"
-                     className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+               <Form {...form}>
+                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                   <FormField
+                     control={form.control}
+                     name="name"
+                     render={({ field }) => (
+                       <FormItem>
+                         <FormControl>
+                           <Input 
+                             placeholder="Seu nome"
+                             className="px-4 py-3 h-auto"
+                             {...field}
+                           />
+                         </FormControl>
+                         <FormMessage />
+                       </FormItem>
+                     )}
                    />
-                 </div>
-                <div>
-                  <input 
-                    type="tel" 
-                    placeholder="Seu telefone"
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div>
-                  <input 
-                    type="email" 
-                    placeholder="Seu e-mail"
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div>
-                  <textarea 
-                    rows={4} 
-                    placeholder="Descreva o serviço elétrico que precisa"
-                    className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
-                  ></textarea>
-                </div>
-                <Button 
-                  type="button"
-                  size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-button"
-                  onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank')}
-                >
-                  Solicitar Orçamento Elétrico
-                </Button>
-              </form>
+                   <FormField
+                     control={form.control}
+                     name="phone"
+                     render={({ field }) => (
+                       <FormItem>
+                         <FormControl>
+                           <Input 
+                             type="tel"
+                             placeholder="Seu telefone"
+                             className="px-4 py-3 h-auto"
+                             {...field}
+                           />
+                         </FormControl>
+                         <FormMessage />
+                       </FormItem>
+                     )}
+                   />
+                   <FormField
+                     control={form.control}
+                     name="email"
+                     render={({ field }) => (
+                       <FormItem>
+                         <FormControl>
+                           <Input 
+                             type="email"
+                             placeholder="Seu e-mail"
+                             className="px-4 py-3 h-auto"
+                             {...field}
+                           />
+                         </FormControl>
+                         <FormMessage />
+                       </FormItem>
+                     )}
+                   />
+                   <FormField
+                     control={form.control}
+                     name="description"
+                     render={({ field }) => (
+                       <FormItem>
+                         <FormControl>
+                           <Textarea 
+                             rows={4}
+                             placeholder="Descreva o serviço elétrico que precisa"
+                             className="px-4 py-3 resize-none"
+                             {...field}
+                           />
+                         </FormControl>
+                         <FormMessage />
+                       </FormItem>
+                     )}
+                   />
+                   <Button 
+                     type="submit"
+                     size="lg" 
+                     className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-button"
+                   >
+                     Solicitar Orçamento Elétrico
+                   </Button>
+                 </form>
+               </Form>
             </div>
           </div>
         </div>

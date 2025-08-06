@@ -35,13 +35,13 @@ const Header = () => {
             <Button 
               variant="ghost" 
               className="hidden md:inline-flex"
-              onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
+              onClick={() => window.open('https://wa.me/5561996339282', '_blank', 'noopener,noreferrer')}
             >
               Fale Conosco
             </Button>
             <Button 
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
-              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank')}
+              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank', 'noopener,noreferrer')}
             >
               Orçamento
             </Button>

@@ -122,7 +122,7 @@ const ServicesSection = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-button"
-              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento.', '_blank')}
+              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento.', '_blank', 'noopener,noreferrer')}
             >
               Solicitar Orçamento Gratuito
             </Button>
@@ -130,7 +130,7 @@ const ServicesSection = () => {
               size="lg" 
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
+              onClick={() => window.open('https://wa.me/5561996339282', '_blank', 'noopener,noreferrer')}
             >
               Falar no WhatsApp
             </Button>

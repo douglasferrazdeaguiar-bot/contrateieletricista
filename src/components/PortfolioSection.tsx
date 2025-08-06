@@ -134,7 +134,7 @@ const PortfolioSection = () => {
                     variant="ghost" 
                     size="sm"
                     className="text-primary hover:text-primary-foreground hover:bg-primary"
-                    onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Vi este projeto no portfólio e gostaria de saber mais.', '_blank')}
+                    onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Vi este projeto no portfólio e gostaria de saber mais.', '_blank', 'noopener,noreferrer')}
                   >
                     Solicitar Orçamento Similar
                   </Button>
@@ -156,7 +156,7 @@ const PortfolioSection = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-button"
-              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Vi o portfólio e gostaria de solicitar um orçamento.', '_blank')}
+              onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Vi o portfólio e gostaria de solicitar um orçamento.', '_blank', 'noopener,noreferrer')}
             >
               Solicitar Orçamento
             </Button>
@@ -164,7 +164,7 @@ const PortfolioSection = () => {
               size="lg" 
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              onClick={() => window.open('https://wa.me/5561996339282', '_blank')}
+              onClick={() => window.open('https://wa.me/5561996339282', '_blank', 'noopener,noreferrer')}
             >
               Falar no WhatsApp
             </Button>
