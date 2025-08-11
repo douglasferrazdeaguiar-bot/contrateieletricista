@@ -11,19 +11,58 @@ const HeroSection = () => {
       ></div>
       
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full"></div>
-      <div className="absolute top-1/2 right-20 w-32 h-32 bg-primary/10 rounded-full"></div>
-      <div className="absolute bottom-20 right-1/4 w-16 h-16 bg-accent/30 rounded-full"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-accent/20 rounded-full animate-pulse"></div>
+      <div className="absolute top-1/2 right-20 w-32 h-32 bg-primary/10 rounded-full animate-bounce"></div>
+      <div className="absolute bottom-20 right-1/4 w-16 h-16 bg-accent/30 rounded-full animate-ping"></div>
       
       <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           <div className="text-foreground space-y-8">
             <div className="flex items-center gap-4 mb-8">
-              <img 
-                src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
-                alt="Contratei Logo" 
-                className="h-40 w-auto brightness-110 contrast-110 drop-shadow-lg"
-              />
+              <div className="relative group cursor-pointer">
+                {/* Logo com efeitos interativos */}
+                <img 
+                  src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
+                  alt="Contratei Logo" 
+                  className="h-40 w-auto brightness-110 contrast-110 drop-shadow-lg 
+                           transition-all duration-500 ease-in-out
+                           hover:scale-110 hover:brightness-125 hover:drop-shadow-2xl
+                           animate-fade-in group-hover:animate-pulse interactive-logo"
+                  onClick={(e) => {
+                    // Efeito de rotação ao clicar
+                    const img = e.currentTarget as HTMLImageElement;
+                    img.style.transition = 'transform 0.6s ease-in-out';
+                    img.style.transform = 'rotate(360deg) scale(1.1)';
+                    setTimeout(() => {
+                      img.style.transform = 'rotate(0deg) scale(1)';
+                    }, 600);
+                  }}
+                />
+                
+                {/* Efeito de brilho ao redor */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 
+                              rounded-full blur-xl opacity-0 group-hover:opacity-100 
+                              transition-opacity duration-500 animate-pulse"></div>
+                
+                {/* Partículas decorativas */}
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full 
+                              animate-bounce opacity-0 group-hover:opacity-100 
+                              transition-opacity duration-300 delay-100"></div>
+                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-primary rounded-full 
+                              animate-bounce opacity-0 group-hover:opacity-100 
+                              transition-opacity duration-300 delay-200"></div>
+                <div className="absolute top-1/2 -left-4 w-2 h-2 bg-accent/70 rounded-full 
+                              animate-ping opacity-0 group-hover:opacity-100 
+                              transition-opacity duration-300 delay-300"></div>
+                
+                {/* Texto interativo que aparece no hover */}
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2
+                              bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm
+                              opacity-0 group-hover:opacity-100 transition-all duration-300
+                              translate-y-2 group-hover:translate-y-0">
+                  ⚡ Clique na logo!
+                </div>
+              </div>
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
