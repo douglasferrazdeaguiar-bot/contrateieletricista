@@ -38,13 +38,13 @@ const AboutSection = () => {
             <div className="bg-gradient-card p-8 rounded-2xl shadow-card">
               <div className="flex items-center gap-3 mb-4">
                 <Target className="w-6 h-6 text-primary" />
-                <h3 className="text-xl font-semibold text-foreground">Nossa Missão</h3>
+                <h3 className="text-xl font-bold text-card-foreground">Nossa Missão</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-card-foreground/90 leading-relaxed font-medium">
                 Transformar cada lar e empresa em um ambiente mais seguro e funcional 
                 através de instalações elétricas de qualidade e atendimento especializado.
               </p>
-              <p className="text-muted-foreground leading-relaxed mt-4">
+              <p className="text-card-foreground/90 leading-relaxed mt-4 font-medium">
                 Sua segurança elétrica é nossa prioridade. Oferecemos soluções técnicas 
                 confiáveis e duradouras para todos os tipos de instalações elétricas 
                 residenciais e comerciais.
@@ -60,7 +60,7 @@ const AboutSection = () => {
                 {values.map((value, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span className="text-muted-foreground">{value}</span>
+                    <span className="text-foreground/80 font-medium">{value}</span>
                   </div>
                 ))}
               </div>

@@ -70,7 +70,7 @@ const ServicesSection = () => {
                 key={index}
                 className="bg-card p-6 rounded-xl shadow-card border border-border hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mb-4 transition-colors">
                   <service.icon className="w-8 h-8 text-primary" />
                 </div>
                 <h4 className="text-primary font-bold mb-3 text-lg">{service.title}</h4>
@@ -99,7 +99,7 @@ const ServicesSection = () => {
                 key={index}
                 className="bg-card p-6 rounded-xl shadow-card border border-border hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
                   <service.icon className="w-6 h-6 text-accent" />
                 </div>
                 <h4 className="text-primary font-bold mb-2 text-lg">{service.title}</h4>
