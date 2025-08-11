@@ -113,7 +113,14 @@ Descrição: ${values.description}`;
         <div className="bg-card backdrop-blur-sm rounded-2xl border border-border p-8 max-w-4xl mx-auto shadow-card">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <div className="flex items-center justify-center mb-4">
+                <img 
+                  src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
+                  alt="Contratei Logo" 
+                  className="h-20 w-auto brightness-110 contrast-110"
+                />
+              </div>
+              <h3 className="text-3xl font-bold text-card-foreground mb-4 text-center">
                 Orçamento Elétrico Gratuito
               </h3>
               <p className="text-muted-foreground mb-6">
