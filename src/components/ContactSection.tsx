@@ -103,9 +103,9 @@ Descrição: ${values.description}`;
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                 <info.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-foreground font-semibold mb-2">{info.title}</h3>
-              <p className="text-foreground text-lg font-medium mb-1">{info.content}</p>
-              <p className="text-muted-foreground text-sm">{info.subtitle}</p>
+              <h3 className="text-card-foreground font-bold mb-2">{info.title}</h3>
+              <p className="text-card-foreground text-lg font-bold mb-1">{info.content}</p>
+              <p className="text-card-foreground/70 text-sm font-medium">{info.subtitle}</p>
             </div>
           ))}
         </div>
@@ -123,15 +123,15 @@ Descrição: ${values.description}`;
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-muted-foreground">Diagnóstico elétrico gratuito</span>
+                  <span className="text-card-foreground/90 font-semibold">Diagnóstico elétrico gratuito</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-muted-foreground">Orçamento sem compromisso</span>
+                  <span className="text-card-foreground/90 font-semibold">Orçamento sem compromisso</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full"></div>
-                  <span className="text-muted-foreground">Equipe certificada e uniformizada</span>
+                  <span className="text-card-foreground/90 font-semibold">Equipe certificada e uniformizada</span>
                 </div>
               </div>
             </div>

@@ -120,13 +120,13 @@ const PortfolioSection = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-accent text-sm font-medium mb-3">
+                <p className="text-primary text-sm font-bold mb-3">
                   📍 {item.location}
                 </p>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                <p className="text-card-foreground/80 text-sm leading-relaxed mb-4 font-medium">
                   {item.description}
                 </p>
                 <div className="pt-4 border-t border-border">
