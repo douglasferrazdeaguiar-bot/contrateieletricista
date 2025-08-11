@@ -22,7 +22,7 @@ const HeroSection = () => {
               <img 
                 src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
                 alt="Contratei Logo" 
-                className="h-32 w-auto brightness-110 contrast-110 drop-shadow-lg"
+                className="h-40 w-auto brightness-110 contrast-110 drop-shadow-lg"
               />
             </div>
             
