@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Zap } from "lucide-react";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const [showZap, setShowZap] = useState(false);
   return (
     <section className="relative min-h-screen bg-gradient-section overflow-hidden">
       {/* Background image */}
@@ -29,13 +31,15 @@ const HeroSection = () => {
                            hover:scale-110 hover:brightness-125 hover:drop-shadow-2xl
                            animate-fade-in group-hover:animate-pulse interactive-logo"
                   onClick={(e) => {
-                    // Efeito de rotação ao clicar
+                    // Efeito de rotação ao clicar + raio
                     const img = e.currentTarget as HTMLImageElement;
                     img.style.transition = 'transform 0.6s ease-in-out';
                     img.style.transform = 'rotate(360deg) scale(1.1)';
+                    setShowZap(true);
                     setTimeout(() => {
                       img.style.transform = 'rotate(0deg) scale(1)';
                     }, 600);
+                    setTimeout(() => setShowZap(false), 700);
                   }}
                 />
                 
@@ -96,21 +100,13 @@ const HeroSection = () => {
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex justify-center pt-4">
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 shadow-button"
                 onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank', 'noopener,noreferrer')}
               >
                 Solicitar Orçamento Elétrico
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                onClick={() => window.open('https://wa.me/5561996339282', '_blank', 'noopener,noreferrer')}
-              >
-                Fale pelo WhatsApp
               </Button>
             </div>
           </div>
