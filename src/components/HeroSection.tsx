@@ -81,15 +81,23 @@ const HeroSection = () => {
             </div>
             
             <div className="flex justify-center pt-4">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 shadow-button"
-                asChild
-              >
-                <a href="https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos." target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento elétrico via WhatsApp">
-                  Solicitar Orçamento Elétrico
-                </a>
-              </Button>
+              <div className="relative group">
+                {/* Raio dinâmico animado */}
+                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-primary/20 to-accent/30 flex items-center justify-center animate-pulse">
+                  <Zap className="w-16 h-16 text-primary animate-bounce" />
+                </div>
+                
+                {/* Círculos decorativos que orbitam o raio */}
+                <div className="absolute inset-0 animate-spin" style={{animationDuration: '8s'}}>
+                  <div className="w-3 h-3 bg-accent rounded-full absolute top-2 left-1/2 transform -translate-x-1/2"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full absolute bottom-2 left-1/2 transform -translate-x-1/2"></div>
+                </div>
+                
+                {/* Texto informativo */}
+                <div className="text-center mt-4">
+                  <p className="text-sm text-muted-foreground font-medium">⚡ Energia e Segurança ⚡</p>
+                </div>
+              </div>
             </div>
           </div>
           

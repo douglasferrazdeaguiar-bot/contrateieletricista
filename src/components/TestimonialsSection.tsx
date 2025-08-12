@@ -4,7 +4,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Carlos Silva",
-      location: "Brasília, DF",
+      location: "Condomínio Capital Ville - Sudoeste/Octogonal",
       service: "Instalação Elétrica Residencial",
       rating: 5,
       comment: "Excelente profissional! Fez toda a instalação elétrica da minha casa nova em apenas 3 dias. Trabalho muito bem organizado, sempre pontual e explicou tudo que estava fazendo. Recomendo sem dúvidas!",
@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "Maria Santos",
-      location: "Águas Claras, DF",
+      location: "Condomínio Jardim Botânico - Jardim Botânico",
       service: "Manutenção de Quadro Elétrico",
       rating: 5,
       comment: "Tive um problema sério no quadro de luz e ele resolveu no mesmo dia que liguei. Muito profissional, chegou rápido e o preço foi justo. Minha energia voltou a funcionar perfeitamente!",
@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "João Oliveira",
-      location: "Taguatinga, DF",
+      location: "Condomínio Ville de Montagne - Lago Norte",
       service: "Padrão de Entrada Trifásico",
       rating: 5,
       comment: "Precisava instalar um padrão trifásico para minha oficina. O trabalho foi impecável, tudo conforme as normas da CEB e passou na vistoria sem problemas. Muito satisfeito com o resultado!",
@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "Ana Paula",
-      location: "Samambaia, DF",
+      location: "Condomínio Parque das Águas - Sobradinho",
       service: "Instalação de Pontos e Tomadas",
       rating: 5,
       comment: "Contratei para instalar várias tomadas e pontos de luz em casa. Trabalho limpo, sem sujeira e ficou tudo perfeito. Preço honesto e entrega no prazo combinado. Super recomendo!",
@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "Roberto Costa",
-      location: "Planaltina, DF",
+      location: "Condomínio Life Resort - Sobradinho II",
       service: "Reparo Emergencial",
       rating: 5,
       comment: "Tive uma emergência elétrica num domingo à noite e ele veio me atender. Resolveu o problema rapidamente e salvou meu fim de semana. Profissional dedicado e confiável!",
@@ -44,7 +44,7 @@ const TestimonialsSection = () => {
     },
     {
       name: "Luciana Ferreira",
-      location: "Ceilândia, DF",
+      location: "Condomínio Brasília Golf Residence - Setor de Habitações Individuais Norte",
       service: "Instalação Completa Comercial",
       rating: 5,
       comment: "Fez toda a parte elétrica da minha loja. Projeto bem elaborado, materiais de qualidade e execução perfeita. A loja está funcionando há 6 meses sem nenhum problema elétrico!",
