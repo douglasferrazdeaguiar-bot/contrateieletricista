@@ -26,20 +26,17 @@ const HeroSection = () => {
                 <img 
                   src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
                   alt="Contratei Logo" 
-                  className="h-40 w-auto brightness-110 contrast-110 drop-shadow-lg 
-                           transition-all duration-500 ease-in-out
-                           hover:scale-110 hover:brightness-125 hover:drop-shadow-2xl
-                           animate-fade-in group-hover:animate-pulse interactive-logo"
+                  className="h-40 w-auto brightness-110 contrast-110 drop-shadow-lg transition-transform duration-200 ease-out hover:scale-105 animate-fade-in"
                   onClick={(e) => {
-                    // Efeito de rotação ao clicar + raio
+                    // Interação simples: leve zoom e ícone de raio rápido
                     const img = e.currentTarget as HTMLImageElement;
-                    img.style.transition = 'transform 0.6s ease-in-out';
-                    img.style.transform = 'rotate(360deg) scale(1.1)';
+                    img.style.transition = 'transform 150ms ease-out';
+                    img.style.transform = 'scale(1.06)';
                     setShowZap(true);
                     setTimeout(() => {
-                      img.style.transform = 'rotate(0deg) scale(1)';
-                    }, 600);
-                    setTimeout(() => setShowZap(false), 700);
+                      img.style.transform = 'scale(1)';
+                      setShowZap(false);
+                    }, 300);
                   }}
                 />
                 
@@ -48,24 +45,7 @@ const HeroSection = () => {
                               rounded-full blur-xl opacity-0 group-hover:opacity-100 
                               transition-opacity duration-500 animate-pulse"></div>
                 
-                {/* Partículas decorativas */}
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full 
-                              animate-bounce opacity-0 group-hover:opacity-100 
-                              transition-opacity duration-300 delay-100"></div>
-                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-primary rounded-full 
-                              animate-bounce opacity-0 group-hover:opacity-100 
-                              transition-opacity duration-300 delay-200"></div>
-                <div className="absolute top-1/2 -left-4 w-2 h-2 bg-accent/70 rounded-full 
-                              animate-ping opacity-0 group-hover:opacity-100 
-                              transition-opacity duration-300 delay-300"></div>
                 
-                {/* Texto interativo que aparece no hover */}
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2
-                              bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm
-                              opacity-0 group-hover:opacity-100 transition-all duration-300
-                              translate-y-2 group-hover:translate-y-0">
-                  ⚡ Clique na logo!
-                </div>
               </div>
             </div>
             
@@ -104,9 +84,11 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 shadow-button"
-                onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank', 'noopener,noreferrer')}
+                asChild
               >
-                Solicitar Orçamento Elétrico
+                <a href="https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos." target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento elétrico via WhatsApp">
+                  Solicitar Orçamento Elétrico
+                </a>
               </Button>
             </div>
           </div>
