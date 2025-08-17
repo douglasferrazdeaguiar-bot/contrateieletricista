@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Zap, Shield, Wrench, Home } from "lucide-react";
+import { CheckCircle, Zap, Shield, Wrench, Home, Car } from "lucide-react";
 import { useState } from "react";
 
 const HeroSection = () => {
@@ -101,41 +101,63 @@ const HeroSection = () => {
             </div>
 
             {/* Seção de Serviços Elétricos em Destaque */}
-            <div className="mt-16">
-              <h3 className="text-2xl font-bold text-primary text-center mb-8">
-                ⚡ Nossos Principais Serviços Elétricos
-              </h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-                    <Zap className="w-6 h-6 text-primary" />
+            <div className="mt-16 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3">
+                  ⚡ NOSSOS SERVIÇOS ELÉTRICOS ESPECIALIZADOS ⚡
+                </h3>
+                <p className="text-lg text-muted-foreground font-medium">
+                  Soluções Completas com Qualidade e Segurança Garantida
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {/* Instalação Elétrica */}
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm p-6 rounded-xl border border-primary/30 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Zap className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-primary font-bold mb-2">Instalação Elétrica</h4>
-                  <p className="text-muted-foreground text-sm">Instalações completas residenciais e comerciais</p>
+                  <h4 className="text-primary font-bold mb-3 text-lg">Instalação Elétrica Completa</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Instalações residenciais e comerciais com projeto elétrico completo e materiais de qualidade</p>
                 </div>
 
-                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-                    <Shield className="w-6 h-6 text-primary" />
+                {/* Quadro de Distribuição */}
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm p-6 rounded-xl border border-primary/30 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Shield className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-primary font-bold mb-2">Quadro de Distribuição</h4>
-                  <p className="text-muted-foreground text-sm">Montagem e manutenção de quadros elétricos</p>
+                  <h4 className="text-primary font-bold mb-3 text-lg">Quadro de Distribuição</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Montagem e modernização de quadros elétricos com DR, DPS e organização completa</p>
                 </div>
 
-                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-                    <Wrench className="w-6 h-6 text-primary" />
+                {/* Manutenção Elétrica */}
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm p-6 rounded-xl border border-primary/30 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Wrench className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-primary font-bold mb-2">Manutenção Elétrica</h4>
-                  <p className="text-muted-foreground text-sm">Correção de problemas e emergências</p>
+                  <h4 className="text-primary font-bold mb-3 text-lg">Manutenção e Emergências</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Correção de problemas elétricos, fuga de corrente e atendimento emergencial 24h</p>
                 </div>
 
-                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
-                    <Home className="w-6 h-6 text-primary" />
+                {/* Padrão de Entrada */}
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 backdrop-blur-sm p-6 rounded-xl border border-primary/30 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Home className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-primary font-bold mb-2">Padrão de Entrada</h4>
-                  <p className="text-muted-foreground text-sm">Instalação de padrões mono, bi e trifásicos</p>
+                  <h4 className="text-primary font-bold mb-3 text-lg">Padrão de Entrada CEB</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Instalação de padrões monofásico, bifásico e trifásico conforme normas da CEB</p>
+                </div>
+
+                {/* WallBox - Novo Serviço */}
+                <div className="bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm p-6 rounded-xl border border-accent/30 hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 group hover:scale-105">
+                  <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <Car className="w-8 h-8 text-white" />
+                  </div>
+                  <h4 className="text-accent font-bold mb-3 text-lg">WallBox Carregador Veicular</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">Instalação de carregadores elétricos residenciais e prediais para veículos elétricos</p>
+                  <div className="mt-3 px-2 py-1 bg-accent/20 text-accent text-xs font-semibold rounded-full inline-block">
+                    NOVO SERVIÇO
+                  </div>
                 </div>
               </div>
 
