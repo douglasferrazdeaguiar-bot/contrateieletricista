@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Zap } from "lucide-react";
+import { CheckCircle, Zap, Shield, Wrench, Home } from "lucide-react";
 import { useState } from "react";
 
 const HeroSection = () => {
@@ -97,6 +97,57 @@ const HeroSection = () => {
                 <div className="text-center mt-4">
                   <p className="text-sm text-muted-foreground font-medium">⚡ Energia e Segurança ⚡</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Seção de Serviços Elétricos em Destaque */}
+            <div className="mt-16">
+              <h3 className="text-2xl font-bold text-primary text-center mb-8">
+                ⚡ Nossos Principais Serviços Elétricos
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <Zap className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-primary font-bold mb-2">Instalação Elétrica</h4>
+                  <p className="text-muted-foreground text-sm">Instalações completas residenciais e comerciais</p>
+                </div>
+
+                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <Shield className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-primary font-bold mb-2">Quadro de Distribuição</h4>
+                  <p className="text-muted-foreground text-sm">Montagem e manutenção de quadros elétricos</p>
+                </div>
+
+                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <Wrench className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-primary font-bold mb-2">Manutenção Elétrica</h4>
+                  <p className="text-muted-foreground text-sm">Correção de problemas e emergências</p>
+                </div>
+
+                <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:shadow-lg transition-all duration-300 group hover:scale-105">
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                    <Home className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-primary font-bold mb-2">Padrão de Entrada</h4>
+                  <p className="text-muted-foreground text-sm">Instalação de padrões mono, bi e trifásicos</p>
+                </div>
+              </div>
+
+              {/* Botão de Ação Principal */}
+              <div className="text-center mt-8">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 shadow-button"
+                  onClick={() => window.open('https://wa.me/5561996339282?text=Olá! Gostaria de solicitar um orçamento para serviços elétricos.', '_blank', 'noopener,noreferrer')}
+                >
+                  Solicitar Orçamento Elétrico Gratuito
+                </Button>
               </div>
             </div>
           </div>
