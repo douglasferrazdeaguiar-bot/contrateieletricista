@@ -8,51 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-  --background: 220 20% 8%;
-  --foreground: 0 0% 95%;
+  --background: 0 0% 100%;
+  --foreground: 220 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 20% 15%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 199 89% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 199 20% 96%;
+    --secondary: 199 30% 95%;
     --secondary-foreground: 199 89% 25%;
 
-    --muted: 220 14.3% 97%;
-    --muted-foreground: 220 8.9% 50%;
+    --muted: 199 20% 96%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 48 100% 67%;
-    --accent-foreground: 199 89% 20%;
+    --accent: 45 98% 55%;
+    --accent-foreground: 220 20% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 93%;
-    --input: 220 13% 93%;
-    --ring: 199 89% 48%;
+    --border: 199 25% 90%;
+    --input: 199 25% 90%;
+    --ring: 199 89% 45%;
 
     --radius: 0.75rem;
     
-    /* CONTRATEI brand colors */
-    --brand-blue: 199 89% 48%;
-    --brand-blue-light: 199 70% 60%;
-    --brand-yellow: 48 100% 67%;
-    --brand-yellow-light: 48 90% 75%;
+    /* CONTRATEI brand colors - Mobile optimized */
+    --brand-blue: 199 89% 45%;
+    --brand-blue-light: 199 70% 55%;
+    --brand-yellow: 45 98% 55%;
+    --brand-yellow-light: 45 90% 65%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(199 89% 48%), hsl(199 70% 60%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14.3% 95.9%));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(199 20% 98%));
+    /* Gradients - Mobile optimized */
+    --gradient-hero: linear-gradient(135deg, hsl(199 89% 45% / 0.95), hsl(199 70% 55% / 0.9));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(199 20% 98%));
+    --gradient-section: linear-gradient(180deg, hsl(199 15% 98%), hsl(0 0% 100%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(199 89% 48% / 0.08);
-    --shadow-card: 0 8px 30px hsl(199 89% 48% / 0.12);
-    --shadow-button: 0 4px 14px hsl(199 89% 48% / 0.25);
+    /* Shadows - Softer for mobile */
+    --shadow-soft: 0 2px 12px hsl(199 89% 45% / 0.08);
+    --shadow-card: 0 4px 20px hsl(199 89% 45% / 0.10);
+    --shadow-button: 0 3px 10px hsl(199 89% 45% / 0.20);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
