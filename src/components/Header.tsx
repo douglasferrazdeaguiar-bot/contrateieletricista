@@ -7,7 +7,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
+              src="/lovable-uploads/contratei-logo.png" 
               alt="Contratei Logo" 
               className="h-16 w-auto brightness-110 contrast-110"
             />

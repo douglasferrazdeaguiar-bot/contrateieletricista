@@ -9,7 +9,7 @@ const HeroSection = () => {
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-10"
-        style={{ backgroundImage: "url('/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png')" }}
+        style={{ backgroundImage: "url('/lovable-uploads/contratei-logo.png')" }}
       ></div>
       
       {/* Decorative elements */}
@@ -24,7 +24,7 @@ const HeroSection = () => {
               <div className="relative group cursor-pointer">
                 {/* Logo com efeitos interativos */}
                 <img 
-                  src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
+                  src="/lovable-uploads/contratei-logo.png" 
                   alt="Contratei Logo" 
                   className="h-40 w-auto brightness-110 contrast-110 drop-shadow-lg transition-transform duration-200 ease-out hover:scale-105 animate-fade-in"
                   onClick={(e) => {
