@@ -12,7 +12,14 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: {
+				DEFAULT: '1rem',
+				sm: '1.5rem',
+				md: '2rem',
+				lg: '2rem',
+				xl: '2rem',
+				'2xl': '2rem'
+			},
 			screens: {
 				'2xl': '1400px'
 			}
@@ -75,6 +82,17 @@ export default {
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
 				'card': 'var(--shadow-card)',
+				'button': 'var(--shadow-button)',
+			},
+			fontSize: {
+				'xs': ['0.75rem', { lineHeight: '1.25rem' }],
+				'sm': ['0.875rem', { lineHeight: '1.5rem' }],
+				'base': ['1rem', { lineHeight: '1.75rem' }],
+				'lg': ['1.125rem', { lineHeight: '1.875rem' }],
+				'xl': ['1.25rem', { lineHeight: '2rem' }],
+				'2xl': ['1.5rem', { lineHeight: '2.25rem' }],
+				'3xl': ['1.875rem', { lineHeight: '2.5rem' }],
+				'4xl': ['2.25rem', { lineHeight: '3rem' }],
 			},
 			keyframes: {
 				'accordion-down': {
