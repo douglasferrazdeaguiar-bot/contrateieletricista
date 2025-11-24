@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Zap, Shield, Wrench, Home, Droplets, Paintbrush, Hammer } from "lucide-react";
+import { Zap, Shield, Wrench, Home } from "lucide-react";
 
 const ServicesSection = () => {
   const electricalServices = [
@@ -29,23 +29,6 @@ const ServicesSection = () => {
     }
   ];
 
-  const otherServices = [
-    {
-      icon: Droplets,
-      title: "Hidráulica",
-      description: "Reparos e instalações hidráulicas completas"
-    },
-    {
-      icon: Paintbrush,
-      title: "Pintura",
-      description: "Pintura residencial e comercial com qualidade"
-    },
-    {
-      icon: Hammer,
-      title: "Reparos Diversos",
-      description: "Manutenção geral e pequenos reparos"
-    }
-  ];
 
   return (
     <section id="servicos" className="py-20 bg-background">
@@ -83,27 +66,6 @@ const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Outros Serviços */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-primary text-center mb-8">
-            🔧 Serviços Complementares
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {otherServices.map((service, index) => (
-              <div 
-                key={index}
-                className="bg-card p-6 rounded-xl shadow-card border border-border hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4 transition-colors">
-                  <service.icon className="w-6 h-6 text-accent" />
-                </div>
-                <h4 className="text-primary font-bold mb-2 text-lg">{service.title}</h4>
-                <p className="text-muted-foreground text-sm">{service.description}</p>
               </div>
             ))}
           </div>
