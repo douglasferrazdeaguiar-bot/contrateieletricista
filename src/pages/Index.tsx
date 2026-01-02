@@ -1,26 +1,24 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import Banner from "@/components/Banner";
-import AboutSection from "@/components/AboutSection";
-import PortfolioSection from "@/components/PortfolioSection";
+import AuthoritySection from "@/components/AuthoritySection";
 import ServicesSection from "@/components/ServicesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import DifferentialsSection from "@/components/DifferentialsSection";
 import SchedulingSection from "@/components/SchedulingSection";
-import ContactSection from "@/components/ContactSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FinalCTASection from "@/components/FinalCTASection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <Banner />
-      <AboutSection />
+      <AuthoritySection />
       <ServicesSection />
-      <PortfolioSection />
-      <TestimonialsSection />
+      <DifferentialsSection />
       <SchedulingSection />
-      <ContactSection />
+      <TestimonialsSection />
+      <FinalCTASection />
       <WhatsAppButton />
     </div>
   );
