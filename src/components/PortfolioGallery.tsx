@@ -10,34 +10,34 @@ const { useState } = React;
 
 const galleryItems = [
   {
-    src: "/lovable-uploads/projeto-wallbox.jpg",
-    alt: "Instalação de Wallbox para veículo elétrico em garagem residencial",
-    caption: "Instalação de Wallbox Residencial",
+    src: "/lovable-uploads/servico-wallbox.png",
+    alt: "Instalação de Wallbox para veículos elétricos",
+    caption: "Instalação de Wallbox",
   },
   {
-    src: "/lovable-uploads/projeto-quadro.jpg",
-    alt: "Quadro de distribuição elétrica organizado com DR e DPS",
-    caption: "Quadro de Distribuição com DR e DPS",
+    src: "/lovable-uploads/servico-quadro-residencial.jpg",
+    alt: "Quadro de distribuição elétrica residencial",
+    caption: "Quadro Residencial",
   },
   {
-    src: "/lovable-uploads/projeto-drogasil.jpg",
-    alt: "Instalação elétrica comercial em estabelecimento",
-    caption: "Projeto Elétrico Comercial",
+    src: "/lovable-uploads/servico-quadro-comercial.jpg",
+    alt: "Quadro de distribuição elétrica comercial",
+    caption: "Quadro Comercial",
   },
   {
-    src: "/lovable-uploads/projeto-youcom.jpg",
-    alt: "Infraestrutura elétrica em ambiente comercial",
-    caption: "Infraestrutura Comercial",
+    src: "/lovable-uploads/servico-iluminacao-residencial.jpg",
+    alt: "Projeto de iluminação residencial",
+    caption: "Iluminação Residencial",
   },
   {
-    src: "/lovable-uploads/c2154055-7a84-4970-beaf-0c1146302933.png",
-    alt: "Serviço de instalação elétrica residencial",
-    caption: "Instalação Elétrica Residencial",
+    src: "/lovable-uploads/servico-loja-comercial.jpg",
+    alt: "Instalação elétrica em loja comercial",
+    caption: "Loja Comercial",
   },
   {
-    src: "/lovable-uploads/714388a3-1ba3-43c5-a9af-fec8562ae1c7.png",
-    alt: "Manutenção elétrica profissional",
-    caption: "Manutenção Elétrica",
+    src: "/lovable-uploads/servico-iluminacao-comercial.jpg",
+    alt: "Projeto de iluminação comercial",
+    caption: "Iluminação Comercial",
   },
 ];
 
