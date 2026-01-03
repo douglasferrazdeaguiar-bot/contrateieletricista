@@ -1,7 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
+
+const { useState, useEffect, useCallback } = React;
 
 const slides = [
   {
