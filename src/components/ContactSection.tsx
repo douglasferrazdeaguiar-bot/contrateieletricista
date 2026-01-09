@@ -115,7 +115,7 @@ Descrição: ${values.description}`;
             <div>
               <div className="flex items-center justify-center mb-4">
                 <img 
-                  src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
+                  src="https://contrateieletricista.lovable.app/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
                   alt="Contratei Logo" 
                   className="h-20 w-auto brightness-110 contrast-110"
                 />
@@ -146,7 +146,7 @@ Descrição: ${values.description}`;
              <div className="bg-muted/30 backdrop-blur-sm rounded-xl p-6 border border-border">
                <div className="flex items-center justify-center mb-6">
                  <img 
-                   src="/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
+                   src="https://contrateieletricista.lovable.app/lovable-uploads/a7d8d575-09d1-43c3-908c-b957ce70e046.png" 
                    alt="Contratei Logo" 
                    className="h-16 w-auto opacity-80"
                  />

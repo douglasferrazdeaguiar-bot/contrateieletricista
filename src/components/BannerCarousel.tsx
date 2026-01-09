@@ -8,25 +8,25 @@ const { useState, useEffect, useCallback } = React;
 const slides = [
   {
     id: 1,
-    image: "/lovable-uploads/projeto-wallbox.jpg",
+    image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-wallbox.jpg",
     title: "Instalação Profissional de Wallbox",
     subtitle: "Segurança, eficiência e conformidade com as normas elétricas.",
   },
   {
     id: 2,
-    image: "/lovable-uploads/projeto-quadro.jpg",
+    image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-quadro.jpg",
     title: "Serviços Elétricos Residenciais",
     subtitle: "Instalações, manutenções e adequações elétricas com qualidade.",
   },
   {
     id: 3,
-    image: "/lovable-uploads/projeto-drogasil.jpg",
+    image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-drogasil.jpg",
     title: "Soluções Elétricas Comerciais",
     subtitle: "Infraestrutura elétrica segura para seu negócio.",
   },
   {
     id: 4,
-    image: "/lovable-uploads/projeto-youcom.jpg",
+    image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-youcom.jpg",
     title: "Segurança Elétrica em Primeiro Lugar",
     subtitle: "Serviços executados com responsabilidade e padrão profissional.",
   },

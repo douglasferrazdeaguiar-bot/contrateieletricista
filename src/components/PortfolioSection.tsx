@@ -10,56 +10,56 @@ const PortfolioSection = () => {
       location: "Brasília - DF",
       description: "Instalação elétrica completa de farmácia com iluminação, tomadas e sistema de segurança",
       category: "Comercial",
-      image: "/lovable-uploads/projeto-drogasil.jpg"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-drogasil.jpg"
     },
     {
       title: "Quadro de Distribuição Profissional",
       location: "Taguatinga - DF", 
       description: "Montagem de quadro elétrico com organização completa, DR, DPS e identificação de circuitos",
       category: "Quadro Elétrico",
-      image: "/lovable-uploads/projeto-quadro.jpg"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-quadro.jpg"
     },
     {
       title: "WallBox - Carregador Veicular Residencial",
       location: "Lago Sul - Brasília",
       description: "Instalação de carregador elétrico para veículos com circuito dedicado e proteções específicas",
       category: "Automação",
-      image: "/lovable-uploads/projeto-wallbox.jpg"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-wallbox.jpg"
     },
     {
       title: "Instalação Elétrica Comercial - Youcom",
       location: "Shopping - Brasília",
       description: "Projeto elétrico completo para loja de roupas com iluminação técnica e decorativa",
       category: "Comercial",
-      image: "/lovable-uploads/projeto-youcom.jpg"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/projeto-youcom.jpg"
     },
     {
       title: "Iluminação LED Residencial",
       location: "Águas Claras - DF",
       description: "Projeto completo de iluminação LED embutida em cozinha moderna com controle automatizado",
       category: "Residencial",
-      image: "/lovable-uploads/12f2d256-4888-460e-9413-75bf30018f69.png"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/12f2d256-4888-460e-9413-75bf30018f69.png"
     },
     {
       title: "Iluminação Moderna Integrada",
       location: "Jardim Botânico - DF",
       description: "Projeto de iluminação embutida em área de lazer com LED e controle inteligente",
       category: "Residencial",
-      image: "/lovable-uploads/3c5c88a8-d96b-421d-b210-4013843fa9aa.png"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/3c5c88a8-d96b-421d-b210-4013843fa9aa.png"
     },
     {
       title: "Adequação de Padrão Elétrico",
       location: "Sobradinho - DF",
       description: "Modernização e adequação de quadro às normas da CEB com aumento de carga",
       category: "Padrão de Entrada",
-      image: "/lovable-uploads/f65def89-0969-421d-99a3-ce70954dbfca.png"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/f65def89-0969-421d-99a3-ce70954dbfca.png"
     },
     {
       title: "Iluminação Externa Decorativa",
       location: "Park Way - DF",
       description: "Sistema de iluminação externa com controle automático e efeitos decorativos",
       category: "Automação",
-      image: "/lovable-uploads/3dbe4690-f333-45c9-ace1-cc580d27ce19.png"
+      image: "https://contrateieletricista.lovable.app/lovable-uploads/3dbe4690-f333-45c9-ace1-cc580d27ce19.png"
     }
   ];
 
