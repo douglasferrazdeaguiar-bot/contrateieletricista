@@ -17,7 +17,16 @@ const Header = () => {
             <a href="#servicos" className="text-foreground hover:text-primary transition-colors font-medium">
               Serviços
             </a>
-            <a href="#agendamento" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a
+              href="#agendamento"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("agendamento")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               Agendamento
             </a>
             <a href="#depoimentos" className="text-foreground hover:text-primary transition-colors font-medium">
