@@ -14,7 +14,16 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#servicos" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a
+              href="#servicos"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("servicos")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               Serviços
             </a>
             <a
@@ -29,7 +38,16 @@ const Header = () => {
             >
               Agendamento
             </a>
-            <a href="#depoimentos" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a
+              href="#depoimentos"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("depoimentos")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
               Depoimentos
             </a>
           </nav>
