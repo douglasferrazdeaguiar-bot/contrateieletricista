@@ -26,6 +26,7 @@ const TestimonialsSection = () => {
           <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
             O Que Dizem Nossos Clientes
           </h2>
+          <div className="mx-auto h-1 w-12 rounded-full bg-accent" />
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">

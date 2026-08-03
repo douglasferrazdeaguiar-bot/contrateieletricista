@@ -53,8 +53,9 @@ const PortfolioGallery = () => {
             Serviços Executados
           </h2>
           <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Alguns trabalhos reais realizados com segurança e padrão profissional.
+            Alguns trabalhos reais, realizados com segurança e padrão profissional.
           </p>
+          <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-accent" />
         </div>
 
         {/* Gallery Grid */}
