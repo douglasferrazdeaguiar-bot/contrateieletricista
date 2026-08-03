@@ -45,7 +45,7 @@ const PortfolioGallery = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
 
   return (
-    <section className="py-12 md:py-24 bg-muted/20">
+    <section className="py-12 md:py-24 bg-muted/60">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
