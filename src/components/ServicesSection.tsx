@@ -10,24 +10,25 @@ const ServicesSection = () => {
     {
       icon: Shield,
       title: "Quadro de Distribuição",
-      description: "Montagem de quadros com DR, DPS e disjuntores para sua segurança."
+      description: "Montagem de quadros com DR, DPS e disjuntores para a sua segurança."
     },
     {
       icon: Wrench,
-      title: "Manutenção e Emergências 24h",
+      title: "Manutenção e Emergência 24h",
       description: "Reparos urgentes, diagnóstico de falhas e correção de curto-circuito."
     },
     {
       icon: FileCheck,
-      title: "Padrão de Entrada CEB",
+      title: "Padrão de Entrada (CEB)",
       description: "Instalação e regularização de padrões monofásicos e trifásicos."
     },
     {
       icon: Car,
-      title: "Wallbox para Veículos Elétricos",
+      title: "Wallbox para Carros Elétricos",
       description: "Instalação de carregadores residenciais para veículos elétricos."
     }
   ];
+
 
   return (
     <section id="servicos" className="py-12 md:py-24 bg-background">
@@ -36,7 +37,9 @@ const ServicesSection = () => {
           <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
             Nossos Serviços
           </h2>
+          <div className="mx-auto h-1 w-12 rounded-full bg-accent" />
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => (

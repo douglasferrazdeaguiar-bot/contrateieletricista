@@ -97,15 +97,16 @@ const SchedulingSection = () => {
   };
 
   return (
-    <section id="agendamento" className="py-12 md:py-24 bg-secondary/20">
+    <section id="agendamento" className="py-12 md:py-24 bg-secondary/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
             Agende Seu Serviço
           </h2>
           <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-            Escolha a data e horário. Entraremos em contato para confirmar.
+            Escolha a data e o horário. Entraremos em contato para confirmar.
           </p>
+          <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-accent" />
         </div>
 
         <div className="max-w-3xl mx-auto bg-card rounded-2xl shadow-soft md:shadow-card p-4 md:p-8 border border-border/60">

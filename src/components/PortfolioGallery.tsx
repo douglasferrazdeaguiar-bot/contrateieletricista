@@ -45,7 +45,7 @@ const PortfolioGallery = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
 
   return (
-    <section className="py-12 md:py-24 bg-muted/20">
+    <section className="py-12 md:py-24 bg-muted/60">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
@@ -53,8 +53,9 @@ const PortfolioGallery = () => {
             Serviços Executados
           </h2>
           <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Alguns trabalhos reais realizados com segurança e padrão profissional.
+            Alguns trabalhos reais, realizados com segurança e padrão profissional.
           </p>
+          <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-accent" />
         </div>
 
         {/* Gallery Grid */}
