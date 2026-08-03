@@ -45,24 +45,24 @@ const PortfolioGallery = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
 
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section className="py-12 md:py-24 bg-muted/20">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
             Serviços Executados
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
             Alguns trabalhos reais realizados com segurança e padrão profissional.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
           {galleryItems.map((item, index) => (
             <div
               key={index}
-              className="group relative cursor-pointer overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 bg-card"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl shadow-soft hover:shadow-card transition-shadow duration-300 bg-card"
               onClick={() => setSelectedImage(item)}
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -74,8 +74,8 @@ const PortfolioGallery = () => {
                 />
               </div>
               {/* Caption */}
-              <div className="p-3 bg-card">
-                <p className="text-sm text-muted-foreground text-center">
+              <div className="p-2.5 md:p-3 bg-card">
+                <p className="text-xs md:text-sm text-muted-foreground text-center">
                   {item.caption}
                 </p>
               </div>

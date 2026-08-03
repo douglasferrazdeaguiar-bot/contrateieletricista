@@ -97,20 +97,20 @@ const SchedulingSection = () => {
   };
 
   return (
-    <section id="agendamento" className="py-16 md:py-24 bg-secondary/30">
+    <section id="agendamento" className="py-12 md:py-24 bg-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
             Agende Seu Serviço
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             Escolha a data e horário. Entraremos em contato para confirmar.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto bg-card rounded-2xl shadow-card p-6 md:p-8 border border-border">
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid md:grid-cols-2 gap-8">
+        <div className="max-w-3xl mx-auto bg-card rounded-2xl shadow-soft md:shadow-card p-4 md:p-8 border border-border/60">
+          <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               {/* Calendário */}
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-foreground font-medium">
@@ -135,15 +135,15 @@ const SchedulingSection = () => {
                   <Clock className="h-5 w-5 text-primary" />
                   <span>Horário</span>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-4 md:grid-cols-2 gap-2 md:gap-3">
                   {timeSlots.map((time) => (
                     <button
                       key={time}
                       type="button"
                       onClick={() => setSelectedTime(time)}
-                      className={`py-3 px-4 rounded-lg border-2 font-medium transition-all duration-200 ${
+                      className={`py-2.5 px-2 md:py-3 md:px-4 rounded-xl border text-sm md:text-base font-medium transition-all duration-200 ${
                         selectedTime === time
-                          ? "border-primary bg-primary text-primary-foreground"
+                          ? "border-primary bg-primary text-primary-foreground shadow-soft"
                           : "border-border bg-background text-foreground hover:border-primary/50"
                       }`}
                     >
@@ -155,7 +155,7 @@ const SchedulingSection = () => {
             </div>
 
             {/* Dados do Cliente */}
-            <div className="grid md:grid-cols-2 gap-6 pt-6 border-t border-border">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 pt-5 md:pt-6 border-t border-border/60">
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-foreground font-medium">
                   Nome Completo *
@@ -191,7 +191,7 @@ const SchedulingSection = () => {
               <Button
                 type="submit"
                 disabled={!isFormValid() || isSubmitting}
-                className="w-full md:w-auto px-12 py-6 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-50"
+                className="w-full md:w-auto rounded-full px-10 py-5 md:px-12 md:py-6 text-base md:text-lg font-medium bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft disabled:opacity-50"
               >
                 {isSubmitting ? "Enviando..." : "Agendar Serviço"}
               </Button>

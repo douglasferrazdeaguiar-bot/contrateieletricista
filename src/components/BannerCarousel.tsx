@@ -69,7 +69,7 @@ const BannerCarousel = () => {
   };
 
   return (
-    <section className="relative w-full h-[70vh] min-h-[500px] max-h-[700px] overflow-hidden">
+    <section className="relative w-full h-[58vh] min-h-[380px] max-h-[700px] md:h-[70vh] md:min-h-[500px] overflow-hidden">
       <div className="overflow-hidden h-full" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide) => (
@@ -87,22 +87,22 @@ const BannerCarousel = () => {
               <div className="absolute inset-0 backdrop-blur-[2px]" />
               
               {/* Dark overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/25" />
 
               {/* Content */}
-              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-8">
-                <div className="max-w-4xl mx-auto space-y-6 animate-fade-in">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight">
+              <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-5 sm:px-8">
+                <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 animate-fade-in">
+                  <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold sm:font-bold text-white leading-snug tracking-tight">
                     {slide.title}
                   </h1>
-                  <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto font-light">
+                  <p className="text-sm sm:text-xl lg:text-2xl text-white/85 max-w-2xl mx-auto font-light leading-relaxed">
                     {slide.subtitle}
                   </p>
-                  <div className="pt-4">
+                  <div className="pt-2 sm:pt-4">
                     <Button
                       size="lg"
                       onClick={handleCTA}
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-full px-7 py-5 text-base sm:px-8 sm:py-6 sm:text-lg shadow-soft hover:shadow-xl transition-all duration-300 hover:scale-105"
                     >
                       <MessageCircle className="w-5 h-5 mr-2" />
                       Solicitar Orçamento

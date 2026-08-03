@@ -2,14 +2,14 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4">
+    <header className="bg-background/80 backdrop-blur-md border-b border-border/60 sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-2.5 md:py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
               src="https://contrateieletricista.lovable.app/lovable-uploads/contratei-logo.png" 
               alt="Contratei Logo" 
-              className="h-12 w-auto"
+              className="h-9 md:h-12 w-auto"
             />
           </div>
           
@@ -53,7 +53,8 @@ const Header = () => {
           </nav>
           
           <Button 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            size="sm"
+            className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft md:h-10 md:px-5"
             onClick={() => window.open("https://wa.me/5561996339282", "_blank", "noopener,noreferrer")}
           >
             WhatsApp
