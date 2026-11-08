@@ -1,4 +1,4 @@
-import { Zap, Shield, Wrench, Lightbulb, Car, Plug, Ground, CloudLightning, AlarmSmoke, Settings2 } from "lucide-react";
+import { Zap, Shield, Wrench, Lightbulb, Car, Plug, Earth, CloudLightning, AlarmSmoke, Settings2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -33,7 +33,7 @@ const services = [
     description: "Instalação e adequação do padrão de entrada conforme os requisitos da distribuidora local.",
   },
   {
-    icon: Ground,
+    icon: Earth,
     title: "Aterramento e equipotencialização",
     description: "Execução e adequação de sistemas de aterramento e conexões de proteção.",
   },
