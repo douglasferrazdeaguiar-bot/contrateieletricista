@@ -10,32 +10,32 @@ const { useState } = React;
 
 const galleryItems = [
   {
-    src: "https://contrateieletricista.lovable.app/lovable-uploads/servico-wallbox.png",
+    src: "/lovable-uploads/servico-wallbox.png",
     alt: "Instalação de Wallbox para veículos elétricos",
     caption: "Instalação de Wallbox",
   },
   {
-    src: "https://contrateieletricista.lovable.app/lovable-uploads/servico-quadro-residencial.jpg",
+    src: "/lovable-uploads/servico-quadro-residencial.jpg",
     alt: "Quadro de distribuição elétrica residencial",
     caption: "Quadro Residencial",
   },
   {
-    src: "https://contrateieletricista.lovable.app/lovable-uploads/servico-quadro-comercial.jpg",
+    src: "/lovable-uploads/servico-quadro-comercial.jpg",
     alt: "Quadro de distribuição elétrica comercial",
     caption: "Quadro Comercial",
   },
   {
-    src: "https://contrateieletricista.lovable.app/lovable-uploads/servico-iluminacao-residencial.jpg",
+    src: "/lovable-uploads/servico-iluminacao-residencial.jpg",
     alt: "Projeto de iluminação residencial",
     caption: "Iluminação Residencial",
   },
   {
-    src: "https://contrateieletricista.lovable.app/lovable-uploads/servico-loja-comercial.jpg",
+    src: "/lovable-uploads/servico-loja-comercial.jpg",
     alt: "Instalação elétrica em loja comercial",
     caption: "Loja Comercial",
   },
   {
-    src: "https://contrateieletricista.lovable.app/lovable-uploads/servico-iluminacao-comercial.jpg",
+    src: "/lovable-uploads/servico-iluminacao-comercial.jpg",
     alt: "Projeto de iluminação comercial",
     caption: "Iluminação Comercial",
   },
