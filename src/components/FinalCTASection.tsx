@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, CalendarDays } from "lucide-react";
 
 const FinalCTASection = () => {
-  const scrollToScheduling = () => {
-    document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToQuote = () => {
+    document.getElementById("orcamento")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -26,11 +26,11 @@ const FinalCTASection = () => {
             <Button 
               size="lg"
               variant="outline"
-              onClick={scrollToScheduling}
+              onClick={scrollToQuote}
               className="rounded-full border border-primary-foreground/70 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-5 md:py-6 text-base md:text-lg font-medium"
             >
               <CalendarDays className="w-5 h-5 mr-2" />
-              Agendar Serviço
+              Solicitar Orçamento
             </Button>
           </div>
         </div>
