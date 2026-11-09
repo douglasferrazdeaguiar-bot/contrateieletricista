@@ -3,7 +3,7 @@
 - [x] SEO: título, descrição, canonical, og, JSON-LD Electrician, sitemap, lang pt-BR
 - [x] Paleta: azul-petróleo como primária, amarelo em detalhes, verde só no WhatsApp
 - [x] Header: logo maior local, menu mobile acessível
-- [x] Hero estático (substituir carrossel) com foto real e 2 botões
+- [x] Hero com carrossel de fotos reais ao fundo, texto e 2 botões fixos
 - [x] Catálogo de 10 serviços com botão de orçamento por serviço (WhatsApp)
 - [x] Seção Empresas/Obras (construtoras, imobiliárias, condomínios)
 - [x] Seção Como Funciona (4 etapas)
