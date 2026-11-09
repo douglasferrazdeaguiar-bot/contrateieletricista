@@ -50,7 +50,7 @@ const BusinessSection = () => {
                 "noopener,noreferrer"
               )
             }
-            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base md:text-lg font-semibold shadow-button"
+            className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 px-6 md:px-8 py-4 md:py-6 h-auto whitespace-normal max-w-full text-base md:text-lg font-semibold shadow-button"
           >
             Solicitar proposta para minha empresa
           </Button>
