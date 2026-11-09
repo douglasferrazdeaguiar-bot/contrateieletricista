@@ -46,7 +46,7 @@ const HeroSection = () => {
     );
 
   const ctrl =
-    "inline-flex items-center justify-center w-10 h-10 rounded-full bg-background/15 text-primary-foreground border border-primary-foreground/30 hover:bg-background/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors";
+    "inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-background/15 text-primary-foreground border border-primary-foreground/30 hover:bg-background/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors";
 
   return (
     <section
@@ -118,7 +118,7 @@ const HeroSection = () => {
         </div>
 
         {/* Controles em faixa própria, sem sobrepor o conteúdo; espaço à direita para o botão flutuante */}
-        <div className="flex items-center justify-start sm:justify-center gap-3 pb-6 pr-20 sm:pr-0">
+        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 pb-6 pr-16 sm:pr-0">
           <button type="button" className={ctrl} onClick={() => go(-1)} aria-label="Foto anterior">
             <ChevronLeft className="w-5 h-5" />
           </button>
