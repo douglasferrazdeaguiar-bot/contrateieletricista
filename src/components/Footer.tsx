@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
+import logo from "@/assets/contratei-logo.webp.asset.json";
+
 const Footer = () => {
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <footer className="bg-card border-t border-border/60 py-10 md:py-14">
@@ -9,7 +9,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div>
             <img
-              src="/lovable-uploads/contratei-logo.png"
+              src={logo.url}
+              width={640}
+              height={427}
               alt="CONTRATEI Eletricista"
               className="h-12 w-auto mb-4"
             />
@@ -37,27 +39,25 @@ const Footer = () => {
             <h3 className="text-foreground font-semibold mb-3">Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="#servicos"
-                  onClick={(e) => { e.preventDefault(); scrollTo("servicos"); }}
+                <Link
+                  to="/#servicos"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Serviços
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#orcamento"
-                  onClick={(e) => { e.preventDefault(); scrollTo("orcamento"); }}
+                <Link
+                  to="/#orcamento"
                   className="text-muted-foreground hover:text-primary"
                 >
                   Orçamento
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#/privacidade" className="text-muted-foreground hover:text-primary">
+                <Link to="/privacidade" className="text-muted-foreground hover:text-primary">
                   Política de Privacidade
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

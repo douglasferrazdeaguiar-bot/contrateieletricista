@@ -5,6 +5,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { Button } from "@/components/ui/button";
 
 const { useState } = React;
 
@@ -43,6 +44,7 @@ const galleryItems = [
 
 const PortfolioGallery = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
+  const opener = React.useRef<HTMLButtonElement | null>(null);
 
   return (
     <section className="py-12 md:py-24 bg-muted/60">
@@ -61,10 +63,14 @@ const PortfolioGallery = () => {
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
           {galleryItems.map((item, index) => (
-            <div
+            <Button
               key={index}
-              className="group relative cursor-pointer overflow-hidden rounded-2xl shadow-soft hover:shadow-card transition-shadow duration-300 bg-card"
-              onClick={() => setSelectedImage(item)}
+              type="button"
+              variant="ghost"
+              aria-label={`Ampliar foto: ${item.alt}`}
+              aria-haspopup="dialog"
+              className="group relative block h-auto w-full p-0 whitespace-normal overflow-hidden rounded-2xl shadow-soft hover:shadow-card transition-shadow duration-300 bg-card hover:bg-card focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              onClick={(event) => { opener.current = event.currentTarget; setSelectedImage(item); }}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
@@ -80,13 +86,17 @@ const PortfolioGallery = () => {
                   {item.caption}
                 </p>
               </div>
-            </div>
+            </Button>
           ))}
         </div>
 
         {/* Lightbox Dialog */}
         <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-          <DialogContent className="max-w-4xl p-2 bg-background/95 backdrop-blur-sm border-border">
+          <DialogContent
+            aria-describedby={undefined}
+            onCloseAutoFocus={(event) => { event.preventDefault(); opener.current?.focus({ preventScroll: true }); }}
+            className="max-w-4xl p-2 pt-14 bg-background/95 backdrop-blur-sm border-border"
+          >
             <VisuallyHidden>
               <DialogTitle>{selectedImage?.caption}</DialogTitle>
             </VisuallyHidden>

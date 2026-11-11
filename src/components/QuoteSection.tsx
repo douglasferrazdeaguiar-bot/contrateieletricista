@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { MessageCircle, Info } from "lucide-react";
+import { buildQuoteWhatsAppUrl, formatBrazilianPhone, phoneSchema } from "@/lib/quote";
 import {
   Select,
   SelectContent,
@@ -27,23 +28,10 @@ const serviceTypes = [
   "Outro",
 ];
 
-const formatPhoneNumber = (value: string): string => {
-  const numbers = value.replace(/\D/g, "");
-  if (numbers.length <= 2) {
-    return numbers.length > 0 ? `(${numbers}` : "";
-  }
-  if (numbers.length <= 7) {
-    return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
-  }
-  if (numbers.length <= 11) {
-    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
-  }
-  return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
-};
-
 const QuoteSection = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [phoneTouched, setPhoneTouched] = useState(false);
   const [service, setService] = useState("");
   const [city, setCity] = useState("");
   const [description, setDescription] = useState("");
@@ -51,16 +39,19 @@ const QuoteSection = () => {
   const { toast } = useToast();
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(formatPhoneNumber(e.target.value));
+    setPhone(e.target.value);
   };
 
+  const phoneValid = phoneSchema.safeParse(phone).success;
+  const showPhoneError = phoneTouched && !phoneValid;
+
   const isFormValid = () => {
-    const cleanPhone = phone.replace(/\D/g, "");
-    return name.trim().length >= 3 && cleanPhone.length >= 10 && service && city.trim().length >= 2;
+    return name.trim().length >= 3 && phoneValid && service && city.trim().length >= 2;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setPhoneTouched(true);
 
     if (!isFormValid()) {
       toast({
@@ -71,19 +62,8 @@ const QuoteSection = () => {
       return;
     }
 
-    const lines = [
-      "Olá! Vim pelo site da CONTRATEI e gostaria de solicitar um orçamento.",
-      "",
-      `Nome: ${name.trim()}`,
-      `Telefone: ${phone}`,
-      `Serviço: ${service}`,
-      `Cidade/Região: ${city.trim()}`,
-    ];
-    if (description.trim()) lines.push(`Descrição: ${description.trim()}`);
-    if (date) lines.push(`Preferência de data: ${date}`);
-
     window.open(
-      `https://wa.me/5561996339282?text=${encodeURIComponent(lines.join("\n"))}`,
+      buildQuoteWhatsAppUrl({ name, phone, service, city, description, date }),
       "_blank",
       "noopener,noreferrer"
     );
@@ -129,10 +109,19 @@ const QuoteSection = () => {
                   placeholder="(61) 99999-9999"
                   value={phone}
                   onChange={handlePhoneChange}
-                  maxLength={16}
+                  onBlur={() => { setPhoneTouched(true); setPhone(formatBrazilianPhone(phone)); }}
+                  autoComplete="tel"
+                  inputMode="tel"
+                  aria-invalid={showPhoneError}
+                  aria-describedby="quote-phone-hint"
                   className="h-12 bg-background border-border"
                   required
                 />
+                <p id="quote-phone-hint" aria-live="polite" className={`text-sm ${showPhoneError ? "text-destructive" : "text-muted-foreground"}`}>
+                  {showPhoneError
+                    ? "Informe um telefone com DDD e 10 ou 11 dígitos. O +55 é opcional."
+                    : "DDD + telefone, com ou sem +55. Ex.: (61) 91234-5678."}
+                </p>
               </div>
             </div>
 
