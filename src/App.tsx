@@ -6,6 +6,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
+import SectionNavigation from "./components/SectionNavigation";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <HashRouter>
+        <SectionNavigation />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/privacidade" element={<PrivacyPolicy />} />
