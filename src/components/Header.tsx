@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import logo from "@/assets/contratei-logo.webp.asset.json";
 
 const navLinks = [
   { label: "Serviços", href: "#servicos" },
@@ -12,43 +14,33 @@ const navLinks = [
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const scrollTo = (id: string) => {
-    setMenuOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <header className="bg-background/90 backdrop-blur-md border-b border-border/60 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-2.5 md:py-3">
         <div className="flex items-center justify-between">
-          <a
-            href="#inicio"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+          <Link
+            to="/"
+            onClick={() => setMenuOpen(false)}
             aria-label="CONTRATEI Eletricista - voltar ao início"
           >
             <img
-              src="/lovable-uploads/contratei-logo.png"
+              src={logo.url}
+              width={640}
+              height={427}
               alt="CONTRATEI Eletricista"
               className="h-11 md:h-14 w-auto"
             />
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo(link.href.slice(1));
-                }}
+                to={`/${link.href}`}
                 className="text-foreground hover:text-primary transition-colors font-medium"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -67,32 +59,32 @@ const Header = () => {
             >
               WhatsApp
             </Button>
-            <button
-              className="md:hidden p-2 text-foreground"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden min-w-11 min-h-11 text-foreground"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
             >
               {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            </Button>
           </div>
         </div>
 
         {menuOpen && (
-          <nav className="md:hidden pt-4 pb-2 border-t border-border/60 mt-2" aria-label="Menu móvel">
+          <nav id="mobile-navigation" className="md:hidden pt-4 pb-2 border-t border-border/60 mt-2" aria-label="Menu móvel">
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollTo(link.href.slice(1));
-                    }}
+                  <Link
+                    to={`/${link.href}`}
+                    onClick={() => setMenuOpen(false)}
                     className="block py-3 px-2 text-foreground hover:text-primary font-medium rounded-lg hover:bg-muted/60"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
