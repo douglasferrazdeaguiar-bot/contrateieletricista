@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/contratei-logo.webp.asset.json";
 
 const navLinks = [
+  { label: "Início", href: "#inicio" },
+  { label: "Obras realizadas", href: "#obras" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Empresas", href: "#empresas" },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Orçamento", href: "#orcamento" },
+  { label: "Como trabalhamos", href: "#como-funciona" },
+  { label: "Solicitar proposta", href: "#orcamento" },
 ];
 
 const Header = () => {
@@ -28,11 +29,11 @@ const Header = () => {
               width={640}
               height={427}
               alt="CONTRATEI Eletricista"
-              className="h-11 md:h-14 w-auto"
+              className="h-14 md:h-16 w-auto"
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+          <nav className="hidden lg:flex items-center gap-4 lg:gap-6" aria-label="Navegação principal">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -51,7 +52,7 @@ const Header = () => {
               onClick={() =>
                 window.open(
                   "https://wa.me/5561996339282?text=" +
-                    encodeURIComponent("Olá! Vim pelo site da CONTRATEI e gostaria de solicitar um orçamento."),
+                    encodeURIComponent("Olá! Vim pelo site da CONTRATEI e gostaria de solicitar uma proposta para minha obra."),
                   "_blank",
                   "noopener,noreferrer"
                 )
@@ -62,7 +63,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden min-w-11 min-h-11 text-foreground"
+              className="lg:hidden min-w-11 min-h-11 text-foreground"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
@@ -74,7 +75,7 @@ const Header = () => {
         </div>
 
         {menuOpen && (
-          <nav id="mobile-navigation" className="md:hidden pt-4 pb-2 border-t border-border/60 mt-2" aria-label="Menu móvel">
+          <nav id="mobile-navigation" className="lg:hidden pt-4 pb-2 border-t border-border/60 mt-2" aria-label="Menu móvel">
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
