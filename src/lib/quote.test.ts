@@ -21,3 +21,22 @@ describe("Brazilian phone input", () => {
     expect(formatBrazilianPhone(input)).toBe(input);
   });
 });
+
+describe("Commercial proposal", () => {
+  test("includes company, work type and expected start without changing the destination", () => {
+    const url = new URL(buildQuoteWhatsAppUrl({ name: "Teste de proposta", phone: "+55 (61) 91234-5678",
+      service: "Iluminação comercial", city: "Goiânia/GO", description: "Instalação de luminárias",
+      company: "Empresa de teste", workType: "Restaurante", date: "2026-12-01" }));
+    expect(url.pathname).toBe("/5561996339282");
+    const message = url.searchParams.get("text");
+    expect(message).toContain("Empresa: Empresa de teste");
+    expect(message).toContain("Tipo de obra: Restaurante");
+    expect(message).toContain("Previsão de início: 2026-12-01");
+  });
+  test("omits optional company and expected start when not provided", () => {
+    const url = new URL(buildQuoteWhatsAppUrl({ name: "Teste", phone: "61912345678", service: "Manutenção elétrica",
+      city: "Brasília/DF", description: "", date: "", workType: "Loja" }));
+    expect(url.searchParams.get("text")).not.toContain("Empresa:");
+    expect(url.searchParams.get("text")).not.toContain("Previsão de início:");
+  });
+});

@@ -10,7 +10,7 @@ export const hasPortfolioFile = (name: string) => `/public/portfolio/${name}` in
 export const mediaUrl = (name: string) => `/portfolio/${name}`;
 export const smallVariant = (name: string) => name.replace(/\.webp$/, '-640.webp');
 export const portfolioSrcSet = (name: string) => hasPortfolioFile(smallVariant(name))
-  ? `${mediaUrl(smallVariant(name))} 640w, ${mediaUrl(name)} 1280w` : undefined;
+  ? `${mediaUrl(smallVariant(name))} 640w` : undefined;
 
 export const works: Work[] = [
   { title: 'YouCom — Brasília/DF', cover: 'youcom-brasilia-iluminacao.webp', caption: 'Iluminação de loja com spots e luminárias decorativas.' },

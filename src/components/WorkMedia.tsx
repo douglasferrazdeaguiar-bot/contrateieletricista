@@ -5,9 +5,12 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { hasPortfolioFile, mediaUrl, portfolioSrcSet, type Work } from '@/lib/portfolio';
 
 export const WorkImage = ({ work, eager = false }: { work: Work; eager?: boolean }) => (
-  <img src={mediaUrl(work.cover)} srcSet={portfolioSrcSet(work.cover)} sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 40vw"
+  <picture>
+  <source media="(max-width: 640px)" srcSet={portfolioSrcSet(work.cover)} sizes="100vw" />
+  <img src={mediaUrl(work.cover)}
     alt={`${work.caption} ${work.title}`} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'low'} decoding="async"
     className="h-full w-full object-contain" />
+  </picture>
 );
 
 export const WorkMedia = ({ items }: { items: Work[] }) => {
