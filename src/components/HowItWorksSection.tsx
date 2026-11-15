@@ -1,23 +1,23 @@
 const steps = [
   {
     number: "1",
-    title: "Você informa o serviço",
-    description: "Conte o que precisa e a localização.",
+    title: "Recebimento do projeto e escopo",
+    description: "Você apresenta o projeto, a localização e as necessidades da obra.",
   },
   {
     number: "2",
-    title: "Avaliamos a necessidade",
-    description: "Analisamos o pedido e a eventual visita técnica.",
+    title: "Avaliação técnica e proposta",
+    description: "Avaliamos o escopo e apresentamos a proposta.",
   },
   {
     number: "3",
-    title: "Apresentamos o orçamento",
-    description: "Combinamos as condições antes de executar.",
+    title: "Contratação e programação",
+    description: "Definimos as condições e a programação do trabalho.",
   },
   {
     number: "4",
-    title: "Agendamos e executamos",
-    description: "Realizamos o serviço contratado na data combinada.",
+    title: "Execução e entrega",
+    description: "Executamos e entregamos o escopo contratado.",
   },
 ];
 
@@ -27,7 +27,7 @@ const HowItWorksSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
-            Como Funciona
+            Como trabalhamos
           </h2>
           <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-accent" />
         </div>

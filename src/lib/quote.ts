@@ -20,18 +20,20 @@ export const formatBrazilianPhone = (value: string): string => {
 };
 
 export const buildQuoteWhatsAppUrl = (details: {
-  name: string; phone: string; service: string; city: string; description: string; date: string;
+  name: string; phone: string; service: string; city: string; description: string; date: string; company?: string; workType?: string;
 }): string => {
   const phone = phoneSchema.parse(details.phone);
   const lines = [
-    "Olá! Vim pelo site da CONTRATEI e gostaria de solicitar um orçamento.",
+    "Olá! Vim pelo site da CONTRATEI e gostaria de solicitar uma proposta.",
     "",
     `Nome: ${details.name.trim()}`,
     `Telefone: ${formatBrazilianPhone(phone)}`,
     `Serviço: ${details.service}`,
     `Cidade/Região: ${details.city.trim()}`,
   ];
+  if (details.company?.trim()) lines.push(`Empresa: ${details.company.trim()}`);
+  if (details.workType?.trim()) lines.push(`Tipo de obra: ${details.workType.trim()}`);
   if (details.description.trim()) lines.push(`Descrição: ${details.description.trim()}`);
-  if (details.date) lines.push(`Preferência de data: ${details.date}`);
+  if (details.date) lines.push(`Previsão de início: ${details.date}`);
   return `https://wa.me/5561996339282?text=${encodeURIComponent(lines.join("\n"))}`;
 };

@@ -1,5 +1,13 @@
 # Roadmap — Melhoria do site CONTRATEI
 
+## Foco comercial — prévia de novembro
+- [x] Atualizar abertura, navegação, serviços e etapas para obras comerciais em DF/GO
+- [x] Adicionar empresa, tipo de obra e previsão de início à proposta pelo WhatsApp
+- [x] Preparar portfólio, evolução e vídeos com correspondência exata e carregamento sob demanda
+- [ ] Receber pacote midias/ e inventario-tecnico.json: não vieram com o documento
+- [x] Verificar prévia em 360, 768 e 1440 px, contatos e ausência de vídeos na abertura
+- [ ] Verificar carrossel, sete vídeos, dimensões do inventário e limite de mídia crítica: depende dos arquivos ausentes
+
 - [x] Corrigir telefone com ou sem +55, orientação e testes da mensagem
 - [x] Corrigir navegação entre privacidade e seções da página inicial
 - [x] Otimizar a logo original preservando transparência e nitidez

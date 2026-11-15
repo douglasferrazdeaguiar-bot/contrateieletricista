@@ -1,7 +1,26 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const WhatsAppButton = () => {
+  const [blocked, setBlocked] = useState(false);
+  useEffect(() => {
+    const check = () => {
+      const size = window.innerWidth >= 768 ? 64 : 56;
+      const offset = window.innerWidth >= 768 ? 24 : 20;
+      const left = window.innerWidth - offset - size;
+      const top = window.innerHeight - offset - size;
+      setBlocked(Array.from(document.querySelectorAll("main button, main a, main input, main textarea, main [role='combobox']")).some((element) => {
+        const box = element.getBoundingClientRect();
+        return box.width > 0 && box.height > 0 && box.right > left - 8 && box.left < left + size + 8 && box.bottom > top - 8 && box.top < top + size + 8;
+      }));
+    };
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => { window.removeEventListener("scroll", check); window.removeEventListener("resize", check); };
+  }, []);
+  if (blocked) return null;
   return (
     <div className="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50">
       <Button

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/contratei-logo.webp.asset.json";
+import localLogo from "@/assets/contratei-logo-local.webp";
 
 const Footer = () => {
 
@@ -10,6 +11,7 @@ const Footer = () => {
           <div>
             <img
               src={logo.url}
+              onError={(event) => { if (event.currentTarget.src !== new URL(localLogo, window.location.href).href) event.currentTarget.src = localLogo; }}
               width={640}
               height={427}
               alt="CONTRATEI Eletricista"
@@ -32,7 +34,7 @@ const Footer = () => {
                 (61) 99633-9282
               </a>
             </p>
-            <p className="text-muted-foreground text-sm">Atendimento em Brasília e região</p>
+            <p className="text-muted-foreground text-sm">Atendimento no Distrito Federal e em Goiás</p>
           </div>
 
           <div>
@@ -51,7 +53,7 @@ const Footer = () => {
                   to="/#orcamento"
                   className="text-muted-foreground hover:text-primary"
                 >
-                  Orçamento
+                  Solicitar proposta
                 </Link>
               </li>
               <li>

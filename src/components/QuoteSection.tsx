@@ -15,6 +15,10 @@ import {
 } from "@/components/ui/select";
 
 const serviceTypes = [
+  "Execução de infraestrutura e cabeamento",
+  "Montagem e adequação de quadros",
+  "Iluminação comercial",
+  "Instalação de detectores de incêndio",
   "Instalações elétricas residenciais e comerciais",
   "Quadros elétricos e proteções",
   "Manutenção elétrica",
@@ -36,6 +40,8 @@ const QuoteSection = () => {
   const [city, setCity] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
+  const [company, setCompany] = useState("");
+  const [workType, setWorkType] = useState("");
   const { toast } = useToast();
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +52,7 @@ const QuoteSection = () => {
   const showPhoneError = phoneTouched && !phoneValid;
 
   const isFormValid = () => {
-    return name.trim().length >= 3 && phoneValid && service && city.trim().length >= 2;
+    return name.trim().length >= 3 && phoneValid && service && workType && city.trim().length >= 2;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -56,14 +62,14 @@ const QuoteSection = () => {
     if (!isFormValid()) {
       toast({
         title: "Campos obrigatórios",
-        description: "Preencha nome, telefone, tipo de serviço e cidade/região.",
+        description: "Preencha nome, telefone, tipo de serviço, tipo de obra e localização.",
         variant: "destructive",
       });
       return;
     }
 
     window.open(
-      buildQuoteWhatsAppUrl({ name, phone, service, city, description, date }),
+      buildQuoteWhatsAppUrl({ name, phone, service, city, description, date, company, workType }),
       "_blank",
       "noopener,noreferrer"
     );
@@ -74,7 +80,7 @@ const QuoteSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
-            Solicite um Orçamento
+            Solicitar proposta
           </h2>
           <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             Preencha os dados abaixo. A mensagem será montada automaticamente e aberta no WhatsApp para você enviar.
@@ -82,12 +88,12 @@ const QuoteSection = () => {
           <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-accent" />
         </div>
 
-        <div className="max-w-2xl mx-auto bg-card rounded-2xl shadow-soft md:shadow-card p-4 md:p-8 border border-border/60">
+        <div className="max-w-2xl mx-auto bg-card rounded-lg shadow-soft md:shadow-card p-4 md:p-8 border border-border/60">
           <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
             <div className="grid md:grid-cols-2 gap-4 md:gap-5">
               <div className="space-y-2">
                 <Label htmlFor="quote-name" className="text-foreground font-medium">
-                  Nome *
+                  Nome completo *
                 </Label>
                 <Input
                   id="quote-name"
@@ -145,12 +151,12 @@ const QuoteSection = () => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="quote-city" className="text-foreground font-medium">
-                  Cidade ou região administrativa *
+                  Localização da obra *
                 </Label>
                 <Input
                   id="quote-city"
                   type="text"
-                  placeholder="Ex.: Águas Claras, Sudoeste..."
+                  placeholder="Cidade e estado da obra"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                   className="h-12 bg-background border-border"
@@ -159,6 +165,19 @@ const QuoteSection = () => {
               </div>
             </div>
 
+            <div className="grid md:grid-cols-2 gap-4 md:gap-5">
+              <div className="space-y-2">
+                <Label htmlFor="quote-company">Empresa (opcional)</Label>
+                <Input id="quote-company" value={company} onChange={(e) => setCompany(e.target.value)} className="h-12 bg-background" autoComplete="organization" />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="quote-work-type">Tipo de obra *</Label>
+                <Select value={workType} onValueChange={setWorkType} required>
+                  <SelectTrigger id="quote-work-type" className="h-12 bg-background"><SelectValue placeholder="Selecione o tipo de obra" /></SelectTrigger>
+                  <SelectContent>{["Loja", "Farmácia", "Restaurante", "Outra obra comercial", "Residencial", "Outro"].map((type) => <SelectItem key={type} value={type}>{type}</SelectItem>)}</SelectContent>
+                </Select>
+              </div>
+            </div>
             <div className="space-y-2">
               <Label htmlFor="quote-description" className="text-foreground font-medium">
                 Descrição da necessidade
@@ -174,7 +193,7 @@ const QuoteSection = () => {
 
             <div className="space-y-2">
               <Label htmlFor="quote-date" className="text-foreground font-medium">
-                Preferência de data <span className="text-muted-foreground font-normal">(opcional, sujeita à confirmação)</span>
+                Previsão de início <span className="text-muted-foreground font-normal">(opcional, sujeita à confirmação)</span>
               </Label>
               <Input
                 id="quote-date"
@@ -190,7 +209,7 @@ const QuoteSection = () => {
               <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
               <p>
                 Ao tocar em "Enviar pelo WhatsApp", o aplicativo será aberto com a mensagem pronta.
-                É necessário confirmar o envio no WhatsApp para que recebamos sua solicitação.
+                É necessário confirmar o envio no WhatsApp para que recebamos sua solicitação. O projeto pode ser enviado na conversa.
               </p>
             </div>
 

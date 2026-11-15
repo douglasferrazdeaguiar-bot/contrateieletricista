@@ -15,8 +15,8 @@ const PrivacyPolicy = () => {
             <h2 className="text-xl font-semibold text-foreground mb-2">1. Dados coletados</h2>
             <p>
               O formulário de orçamento deste site solicita nome, telefone, tipo de serviço,
-              cidade ou região administrativa, descrição da necessidade e, opcionalmente,
-              uma preferência de data. Esses dados são usados apenas para montar uma mensagem
+              localização da obra, tipo de obra, descrição da necessidade e, opcionalmente,
+              empresa e previsão de início. Esses dados são usados apenas para montar uma mensagem
               que é aberta no seu próprio WhatsApp — nenhuma informação é armazenada em
               servidores da CONTRATEI através deste site.
             </p>
@@ -63,7 +63,7 @@ const PrivacyPolicy = () => {
               <br />
               WhatsApp: (61) 99633-9282
               <br />
-              Atendimento em Brasília e região.
+              Atendimento no Distrito Federal e em Goiás.
             </p>
           </section>
         </div>

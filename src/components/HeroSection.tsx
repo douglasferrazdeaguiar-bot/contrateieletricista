@@ -1,157 +1,64 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, MessageCircle, Pause, Play } from "lucide-react";
-
-// Fotos reais de trabalhos enviadas pela empresa (reaproveitadas do carrossel anterior)
-const slides = [
-  { src: "/lovable-uploads/projeto-wallbox.jpg", alt: "Carregador veicular wallbox instalado pela CONTRATEI" },
-  { src: "/lovable-uploads/projeto-quadro.jpg", alt: "Quadro de distribuição elétrica montado pela CONTRATEI" },
-  { src: "/lovable-uploads/projeto-youcom.jpg", alt: "Instalação elétrica em loja comercial atendida pela CONTRATEI" },
-  { src: "/lovable-uploads/servico-iluminacao-comercial.jpg", alt: "Iluminação comercial instalada pela CONTRATEI" },
-];
-
-const INTERVAL = 6000;
+import { heroWorks } from "@/lib/portfolio";
+import { WorkImage } from "@/components/WorkMedia";
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [hovering, setHovering] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
+  const [interacting, setInteracting] = useState(false);
+  const [reduced, setReduced] = useState(true);
+  const touch = useRef<number | null>(null);
+  const go = useCallback((direction: number) => {
+    if (heroWorks.length) setIndex((current) => (current + direction + heroWorks.length) % heroWorks.length);
   }, []);
-
-  const go = useCallback((dir: number) => setIndex((i) => (i + dir + slides.length) % slides.length), []);
-
-  const autoplay = !paused && !hovering && !reducedMotion;
   useEffect(() => {
-    if (!autoplay) return;
-    const t = setTimeout(() => go(1), INTERVAL);
-    return () => clearTimeout(t);
-  }, [autoplay, index, go]);
-
-  const [touchX, setTouchX] = useState<number | null>(null);
-
-  const openWhatsApp = () =>
-    window.open(
-      "https://wa.me/5561996339282?text=" +
-        encodeURIComponent("Olá! Vim pelo site da CONTRATEI e gostaria de solicitar um orçamento."),
-      "_blank",
-      "noopener,noreferrer"
-    );
-
-  const ctrl =
-    "inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-background/15 text-primary-foreground border border-primary-foreground/30 hover:bg-background/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors";
-
+    const query = matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(query.matches);
+    update(); query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+  useEffect(() => {
+    if (paused || interacting || reduced || heroWorks.length < 2) return;
+    const timer = setTimeout(() => go(1), 6000);
+    return () => clearTimeout(timer);
+  }, [paused, interacting, reduced, index, go]);
   return (
-    <section
-      id="inicio"
-      aria-roledescription="carrossel"
-      aria-label="Trabalhos realizados pela CONTRATEI"
-      className="relative isolate overflow-hidden bg-primary"
-      onMouseEnter={() => setHovering(true)}
-      onMouseLeave={() => setHovering(false)}
-      onFocusCapture={() => setHovering(true)}
-      onBlurCapture={() => setHovering(false)}
-      onTouchStart={(e) => { setTouchX(e.touches[0].clientX); setHovering(true); }}
-      onTouchEnd={(e) => {
-        if (touchX !== null) {
-          const dx = e.changedTouches[0].clientX - touchX;
-          if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
-        }
-        setTouchX(null);
-        setHovering(false);
-      }}
-    >
-      {/* Fotos de fundo */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true">
-        {slides.map((s, i) => (
-          <img
-            key={s.src}
-            src={s.src}
-            alt=""
-            loading={i === 0 ? "eager" : "lazy"}
-            fetchPriority={i === 0 ? "high" : "low"}
-            className={`absolute inset-0 w-full h-full object-cover ${
-              reducedMotion ? "" : "transition-opacity duration-1000 ease-in-out"
-            } ${i === index ? "opacity-100" : "opacity-0"}`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/60 to-foreground/80" />
-      </div>
-
-      {/* Conteúdo fixo */}
-      <div className="container mx-auto px-4 flex flex-col min-h-[520px] sm:min-h-[560px] md:min-h-[620px]">
-        <div className="flex-1 flex items-center justify-center py-12 md:py-20">
-          <div className="max-w-3xl text-center">
-            <span className="inline-block h-1 w-12 rounded-full bg-accent mb-5" aria-hidden="true" />
-            <h1 className="text-[1.65rem] leading-tight sm:text-4xl md:text-5xl font-bold text-primary-foreground mb-4 md:mb-6 tracking-tight">
-              Serviços elétricos em Brasília para sua casa, empresa e condomínio
-            </h1>
-            <p className="text-base md:text-xl text-primary-foreground/90 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Instalações, manutenção e adequações elétricas, wallbox, SPDA e detectores de fumaça.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-sm sm:max-w-none mx-auto">
-              <Button
-                size="lg"
-                onClick={openWhatsApp}
-                className="rounded-full bg-accent hover:bg-accent/90 text-accent-foreground px-6 md:px-8 py-6 text-base md:text-lg font-semibold shadow-button whitespace-normal h-auto"
-              >
-                <MessageCircle className="w-5 h-5 mr-2 shrink-0" />
-                Solicitar orçamento pelo WhatsApp
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => document.getElementById("servicos")?.scrollIntoView({ behavior: "smooth" })}
-                className="rounded-full border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary px-6 md:px-8 py-6 text-base md:text-lg font-semibold whitespace-normal h-auto"
-              >
-                Conhecer nossos serviços
-              </Button>
-            </div>
+    <section id="inicio" className="bg-primary text-primary-foreground">
+      <div className={`container mx-auto px-4 py-10 md:py-14 grid gap-8 lg:gap-12 items-center ${heroWorks.length ? "md:grid-cols-2" : "max-w-4xl"}`}>
+        <div className="min-w-0">
+          <div className="h-1 w-12 bg-accent mb-5" />
+          <h1 className="text-3xl md:text-4xl lg:text-5xl leading-tight font-bold">Execução elétrica para obras comerciais e construtoras</h1>
+          <p className="mt-5 text-base lg:text-lg leading-relaxed text-primary-foreground/90">Infraestrutura, cabeamento, quadros e iluminação para lojas, farmácias e restaurantes. Atendimento no Distrito Federal e em Goiás.</p>
+          <div className="mt-7 flex flex-col gap-3 items-start">
+            <Button size="lg" asChild className="h-auto py-4 px-5 whitespace-normal bg-accent text-accent-foreground hover:bg-accent/90 max-w-full">
+              <a href={"https://wa.me/5561996339282?text=" + encodeURIComponent("Olá! Vim pelo site da CONTRATEI e gostaria de solicitar uma proposta para minha obra.")} target="_blank" rel="noopener noreferrer"><MessageCircle className="mr-2 h-5 w-5 shrink-0" />Solicitar proposta para minha obra</a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="h-auto py-4 px-5 border-primary-foreground/70 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary whitespace-normal">
+              <Link to="/#obras">Ver obras realizadas</Link>
+            </Button>
           </div>
         </div>
-
-        {/* Controles em faixa própria, sem sobrepor o conteúdo; espaço à direita para o botão flutuante */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 pb-6 pr-16 sm:pr-0">
-          <button type="button" className={ctrl} onClick={() => go(-1)} aria-label="Foto anterior">
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <div className="flex items-center gap-2" role="tablist" aria-label="Escolher foto">
-            {slides.map((s, i) => (
-              <button
-                key={s.src}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                aria-label={`Foto ${i + 1} de ${slides.length}: ${s.alt}`}
-                onClick={() => setIndex(i)}
-                className={`h-2.5 rounded-full transition-all ${i === index ? "w-7 bg-accent" : "w-2.5 bg-primary-foreground/60 hover:bg-primary-foreground"}`}
-              />
-            ))}
+        {heroWorks.length > 0 && <div className="min-w-0" role="region" aria-roledescription="carrossel" aria-label="Obras atendidas"
+          onMouseEnter={() => setInteracting(true)} onMouseLeave={() => setInteracting(false)}
+          onFocusCapture={() => setInteracting(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false); }}
+          onTouchStart={(event) => { touch.current = event.touches[0]?.clientX ?? null; setInteracting(true); }}
+          onTouchEnd={(event) => { const end = event.changedTouches[0]?.clientX; if (touch.current !== null && end !== undefined && Math.abs(end - touch.current) > 50) go(end < touch.current ? 1 : -1); touch.current = null; setInteracting(false); }}>
+          <div className="relative aspect-[4/3] bg-secondary rounded-lg">
+            {heroWorks.map((work, position) => (position === index || position === 0) && <div key={work.cover} aria-hidden={position !== index}
+              className={`absolute inset-0 transition-opacity duration-700 motion-reduce:transition-none ${position === index ? "opacity-100" : "opacity-0"}`}><WorkImage work={work} eager={position === 0} /></div>)}
           </div>
-          <button type="button" className={ctrl} onClick={() => go(1)} aria-label="Próxima foto">
-            <ChevronRight className="w-5 h-5" />
-          </button>
-          <button
-            type="button"
-            className={ctrl}
-            onClick={() => setPaused((p) => !p)}
-            aria-label={paused ? "Retomar troca automática de fotos" : "Pausar troca automática de fotos"}
-            aria-pressed={paused}
-          >
-            {paused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
-          </button>
-        </div>
-        <p className="sr-only" aria-live="polite">{slides[index].alt}</p>
+          <div className="flex flex-wrap gap-2 mt-4 pb-4 pr-16 md:pr-0 items-center" aria-label="Contrôles das fotos">
+            <Button size="icon" variant="ghost" aria-label="Foto anterior" onClick={() => go(-1)}><ChevronLeft /></Button>
+            {heroWorks.map((work, position) => <Button key={work.cover} size="icon" variant="ghost" aria-label={`Foto ${position + 1}: ${work.title}`} aria-pressed={position === index} onClick={() => setIndex(position)} className="w-7 h-10"><span className={`h-2.5 w-2.5 rounded-full ${position === index ? "bg-accent" : "bg-primary-foreground/50"}`} /></Button>)}
+            <Button size="icon" variant="ghost" aria-label="Próxima foto" onClick={() => go(1)}><ChevronRight /></Button>
+            <Button size="icon" variant="ghost" aria-label={paused ? "Retomar troca automática de fotos" : "Pausar troca automática de fotos"} aria-pressed={paused} onClick={() => setPaused(!paused)}>{paused ? <Play /> : <Pause />}</Button>
+          </div>
+        </div>}
       </div>
     </section>
   );
 };
-
 export default HeroSection;

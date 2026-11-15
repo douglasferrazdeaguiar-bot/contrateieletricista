@@ -1,122 +1,27 @@
-import * as React from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-
-const { useState } = React;
-
-const galleryItems = [
-  {
-    src: "/lovable-uploads/servico-wallbox.png",
-    alt: "Instalação de Wallbox para veículos elétricos",
-    caption: "Instalação de Wallbox",
-  },
-  {
-    src: "/lovable-uploads/servico-quadro-residencial.jpg",
-    alt: "Quadro de distribuição elétrica residencial",
-    caption: "Quadro Residencial",
-  },
-  {
-    src: "/lovable-uploads/servico-quadro-comercial.jpg",
-    alt: "Quadro de distribuição elétrica comercial",
-    caption: "Quadro Comercial",
-  },
-  {
-    src: "/lovable-uploads/servico-iluminacao-residencial.jpg",
-    alt: "Projeto de iluminação residencial",
-    caption: "Iluminação Residencial",
-  },
-  {
-    src: "/lovable-uploads/servico-loja-comercial.jpg",
-    alt: "Instalação elétrica em loja comercial",
-    caption: "Loja Comercial",
-  },
-  {
-    src: "/lovable-uploads/servico-iluminacao-comercial.jpg",
-    alt: "Projeto de iluminação comercial",
-    caption: "Iluminação Comercial",
-  },
-];
+import { availableWorks, evolution, hasPortfolioFile } from "@/lib/portfolio";
+import { WorkMedia } from "@/components/WorkMedia";
 
 const PortfolioGallery = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof galleryItems[0] | null>(null);
-  const opener = React.useRef<HTMLButtonElement | null>(null);
-
-  return (
-    <section className="py-12 md:py-24 bg-muted/60">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-4xl font-semibold md:font-bold text-foreground mb-3 md:mb-4 tracking-tight">
-            Serviços Executados
-          </h2>
-          <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Alguns trabalhos reais, realizados com segurança e padrão profissional.
-          </p>
-          <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-accent" />
-        </div>
-
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
-          {galleryItems.map((item, index) => (
-            <Button
-              key={index}
-              type="button"
-              variant="ghost"
-              aria-label={`Ampliar foto: ${item.alt}`}
-              aria-haspopup="dialog"
-              className="group relative block h-auto w-full p-0 whitespace-normal overflow-hidden rounded-2xl shadow-soft hover:shadow-card transition-shadow duration-300 bg-card hover:bg-card focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              onClick={(event) => { opener.current = event.currentTarget; setSelectedImage(item); }}
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              {/* Caption */}
-              <div className="p-2.5 md:p-3 bg-card">
-                <p className="text-xs md:text-sm text-muted-foreground text-center">
-                  {item.caption}
-                </p>
-              </div>
-            </Button>
-          ))}
-        </div>
-
-        {/* Lightbox Dialog */}
-        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-          <DialogContent
-            aria-describedby={undefined}
-            onCloseAutoFocus={(event) => { event.preventDefault(); opener.current?.focus({ preventScroll: true }); }}
-            className="max-w-4xl p-2 pt-14 bg-background/95 backdrop-blur-sm border-border"
-          >
-            <VisuallyHidden>
-              <DialogTitle>{selectedImage?.caption}</DialogTitle>
-            </VisuallyHidden>
-            {selectedImage && (
-              <div className="relative">
-                <img
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
-                  className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-                />
-                <p className="text-center text-muted-foreground mt-3 text-sm">
-                  {selectedImage.caption}
-                </p>
-              </div>
-            )}
-          </DialogContent>
-        </Dialog>
+  const [expanded, setExpanded] = useState(false);
+  const evolutionReady = evolution.every((work) => hasPortfolioFile(work.cover));
+  return <>
+    <section id="obras" className="py-12 md:py-20 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="text-2xl md:text-4xl font-bold text-foreground">Obras e serviços realizados</h2>
+        <p className="mt-4 text-muted-foreground max-w-2xl leading-relaxed">Conheça registros de execução, instalações concluídas e manutenção em ambientes comerciais.</p>
+        {availableWorks.length > 0 && <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10"><WorkMedia items={expanded ? availableWorks : availableWorks.slice(0, 6)} /></div>}
+        {availableWorks.length > 6 && <Button variant="outline" className="mt-8" onClick={() => setExpanded(!expanded)}>{expanded ? "Ver menos trabalhos" : "Ver mais trabalhos"}</Button>}
       </div>
     </section>
-  );
+    {evolutionReady && <section className="py-12 md:py-20 bg-secondary/40">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="text-2xl md:text-4xl font-bold">Da execução à iluminação instalada</h2>
+        <p className="mt-3 text-muted-foreground">Drogasil — Jardim Nova Esperança, Goiânia/GO</p>
+        <div className="grid md:grid-cols-2 gap-6 mt-8"><WorkMedia items={evolution} /></div>
+      </div>
+    </section>}
+  </>;
 };
-
 export default PortfolioGallery;
