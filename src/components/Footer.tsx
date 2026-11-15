@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/contratei-logo.webp.asset.json";
+import localLogo from "@/assets/contratei-logo-local.webp";
 
 const Footer = () => {
 
@@ -10,6 +11,7 @@ const Footer = () => {
           <div>
             <img
               src={logo.url}
+              onError={(event) => { if (event.currentTarget.src !== new URL(localLogo, window.location.href).href) event.currentTarget.src = localLogo; }}
               width={640}
               height={427}
               alt="CONTRATEI Eletricista"

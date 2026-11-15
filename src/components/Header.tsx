@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/contratei-logo.webp.asset.json";
+import localLogo from "@/assets/contratei-logo-local.webp";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -26,6 +27,7 @@ const Header = () => {
           >
             <img
               src={logo.url}
+              onError={(event) => { if (event.currentTarget.src !== new URL(localLogo, window.location.href).href) event.currentTarget.src = localLogo; }}
               width={640}
               height={427}
               alt="CONTRATEI Eletricista"
