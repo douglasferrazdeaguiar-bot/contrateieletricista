@@ -1,3 +1,5 @@
+import dimensions from '@/assets/portfolio/dimensions.json';
+
 export type Work = {
   title: string;
   caption: string;
@@ -5,16 +7,17 @@ export type Work = {
   video?: string;
 };
 
-const files = import.meta.glob('/public/portfolio/*', { eager: true, query: '?url', import: 'default' });
-export const hasPortfolioFile = (name: string) => `/public/portfolio/${name}` in files;
-export const mediaUrl = (name: string) => `/portfolio/${name}`;
+const files = import.meta.glob<{ url: string }>('/src/assets/portfolio/*.asset.json', { eager: true, import: 'default' });
+export const hasPortfolioFile = (name: string) => `/src/assets/portfolio/${name}.asset.json` in files;
+export const mediaUrl = (name: string) => files[`/src/assets/portfolio/${name}.asset.json`]?.url;
+export const mediaDimensions = (name: string) => (dimensions as Record<string, { width: number; height: number }>)[name];
 export const smallVariant = (name: string) => name.replace(/\.webp$/, '-640.webp');
 export const portfolioSrcSet = (name: string) => hasPortfolioFile(smallVariant(name))
-  ? `${mediaUrl(smallVariant(name))} 640w` : undefined;
+  ? `${mediaUrl(smallVariant(name))} 640w, ${mediaUrl(name)} ${mediaDimensions(name)?.width ?? 640}w` : undefined;
 
 export const works: Work[] = [
   { title: 'YouCom — Brasília/DF', cover: 'youcom-brasilia-iluminacao.webp', caption: 'Iluminação de loja com spots e luminárias decorativas.' },
-  { title: 'Drogasil — Vera Cruz, Goiás', cover: 'drogasil-vera-cruz-fachada-poster.webp', video: 'drogasil-vera-cruz-loja-finalizada.mp4', caption: 'Iluminação de fachada, área externa e interior — loja finalizada.' },
+  { title: 'Drogasil — Vera Cruz, Goiás', cover: 'drogasil-vera-cruz-loja-finalizada-poster.webp', video: 'drogasil-vera-cruz-loja-finalizada.mp4', caption: 'Iluminação de fachada, área externa e interior — loja finalizada.' },
   { title: 'Mania de Churrasco — Brasília/DF', cover: 'mania-de-churrasco-brasilia-iluminacao-poster.webp', video: 'mania-de-churrasco-brasilia-iluminacao.mp4', caption: 'Iluminação interna de restaurante com luminárias lineares e spots.' },
   { title: 'Quadro comercial — São Paulo', cover: 'comercial-sao-paulo-quadro-concluido-poster.webp', video: 'comercial-sao-paulo-quadro-concluido.mp4', caption: 'Montagem concluída de quadro elétrico com circuitos identificados.' },
   { title: 'Quadro comercial — Brasília/DF', cover: 'comercial-brasilia-quadro-concluido-poster.webp', video: 'comercial-brasilia-quadro-concluido.mp4', caption: 'Quadro elétrico com comandos e componentes internos — montagem concluída.' },
