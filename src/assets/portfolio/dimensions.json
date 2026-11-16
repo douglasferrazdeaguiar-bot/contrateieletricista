@@ -62,5 +62,21 @@
   "comercial-brasilia-quadro-concluido-poster-640.webp": {
     "width": 640,
     "height": 853
+  },
+  "comercial-goiania-infraestrutura.webp": {
+    "width": 900,
+    "height": 1600
+  },
+  "comercial-goiania-infraestrutura-640.webp": {
+    "width": 640,
+    "height": 1138
+  },
+  "comercial-goiania-quadro-em-montagem-poster.webp": {
+    "width": 720,
+    "height": 1280
+  },
+  "comercial-goiania-quadro-em-montagem-poster-640.webp": {
+    "width": 640,
+    "height": 1138
   }
 }
