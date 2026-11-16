@@ -1,6 +1,8 @@
 # Roadmap — Melhoria do site CONTRATEI
 
 ## Foco comercial — prévia de novembro
+- [ ] Incorporar os sete WebP e três vídeos recebidos em 16/11, gerar capa do quadro de Brasília e variantes reais
+- [ ] Testar carrossel, comparação, ampliação e reprodução dos três vídeos recebidos sem download inicial
 - [x] Atualizar abertura, navegação, serviços e etapas para obras comerciais em DF/GO
 - [x] Adicionar empresa, tipo de obra e previsão de início à proposta pelo WhatsApp
 - [x] Preparar portfólio, evolução e vídeos com correspondência exata e carregamento sob demanda
