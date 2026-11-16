@@ -1,6 +1,7 @@
 # Roadmap — Melhoria do site CONTRATEI
 
 ## Foco comercial — prévia de novembro
+- [ ] Incorporar infraestrutura e quadro em montagem de Goiânia recebidos às 10:10; conferir duplicata YouCom sem duplicar o caso
 - [ ] Incorporar os sete WebP e três vídeos recebidos em 16/11, gerar capa do quadro de Brasília e variantes reais
 - [ ] Testar carrossel, comparação, ampliação e reprodução dos três vídeos recebidos sem download inicial
 - [x] Atualizar abertura, navegação, serviços e etapas para obras comerciais em DF/GO
