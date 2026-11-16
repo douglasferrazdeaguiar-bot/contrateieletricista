@@ -1,6 +1,7 @@
 # Roadmap — Melhoria do site CONTRATEI
 
 ## Foco comercial — prévia de novembro
+- [x] Substituir as fotos da abertura por sequência automática sem som de Mania de Churrasco e Drogasil, com pausa
 - [x] Incorporar infraestrutura e quadro em montagem de Goiânia recebidos às 10:10; conferir duplicata YouCom sem duplicar o caso
 - [x] Incorporar os sete WebP e três vídeos recebidos em 16/11, gerar capa do quadro de Brasília e variantes reais
 - [x] Testar carrossel, pausa, ampliação e reprodução dos três vídeos recebidos sem download inicial em 360/768/1440
