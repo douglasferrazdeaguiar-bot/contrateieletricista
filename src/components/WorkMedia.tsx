@@ -2,12 +2,13 @@ import { useRef, useState } from 'react';
 import { Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { hasPortfolioFile, mediaUrl, portfolioSrcSet, type Work } from '@/lib/portfolio';
+import { hasPortfolioFile, mediaUrl, mediaDimensions, portfolioSrcSet, type Work } from '@/lib/portfolio';
 
 export const WorkImage = ({ work, eager = false }: { work: Work; eager?: boolean }) => (
-  <picture>
-  <source media="(max-width: 640px)" srcSet={portfolioSrcSet(work.cover)} sizes="100vw" />
-  <img src={mediaUrl(work.cover)}
+  <picture className="block h-full w-full">
+  <img src={mediaUrl(work.cover)} srcSet={portfolioSrcSet(work.cover)}
+    sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1023px) 45vw, 560px"
+    width={mediaDimensions(work.cover)?.width} height={mediaDimensions(work.cover)?.height}
     alt={`${work.caption} ${work.title}`} loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : 'low'} decoding="async"
     className="h-full w-full object-contain" />
   </picture>
